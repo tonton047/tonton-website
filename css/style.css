@@ -1,0 +1,79 @@
+body{
+    padding: 0;
+    margin: 0;
+    
+  }
+
+.header {
+  position: fixed;
+  height: 72px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+}
+
+  .headerbox {
+    z-index: 999;
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin:auto 40px;
+  }
+
+  .left-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+
+  .brandinglogo{
+    margin-top: 6px;
+  }
+
+/* 首页展示图 */
+
+.entrancebox {
+  top:72px;
+  height: calc(100vh - 72px);
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+}
+
+.entranceimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 24px;
+  overflow: hidden;
+  top: 6px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  margin: auto;
+}
+
+ /* 图片填充 */
+  .entranceimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持图片比例，并裁剪填充 */
+  }
+
+
