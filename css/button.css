@@ -10,6 +10,8 @@
     background: var(--button-color);
     position: relative;
     text-align: center;
+    font-size: 16px;
+    font-weight:500;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: background-color 0.3s, transform 0.3s; /* 添加 transform 过渡 */
     border-radius: 999px;
