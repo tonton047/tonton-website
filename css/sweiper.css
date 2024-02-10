@@ -113,4 +113,25 @@
     width: 100%;
   }
 
+  .swiper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+/* 添加模糊效果的 CSS 样式 */
+.image__wrapper.blur {
+  filter: blur(20px); /* 您可以根据需要调整模糊程度 */
+  transition: filter 0.5s ease;
+}
+
+
+/* 添加清晰效果的 CSS 样式 */
+.image__wrapper.unblur {
+  filter: none;
+  transition: filter 0.5s ease;
+}
+
+
 }

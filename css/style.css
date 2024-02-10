@@ -4,6 +4,17 @@ body{
     
   }
 
+  :root {
+    --custom-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    outline: none;
+  }
+  
+
 .header {
   position: fixed;
   height: 72px;
@@ -61,7 +72,7 @@ body{
     font-size: 13px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.45);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--custom-font-family);
     border: 1px solid rgba(0, 0, 0, 0.20);
     border-radius: 6px;
   }
@@ -109,7 +120,7 @@ body{
       text-align: center;
       font-size: 16px;
       font-weight:500;
-      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: var(--custom-font-family);
       transition: background-color 0.3s, transform 0.3s; /* 添加 transform 过渡 */
       border-radius: 999px;
       box-shadow: inset 0 0 0 0px #000000;
@@ -198,208 +209,386 @@ body{
     transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
   }
 
-    
 
+  /* 侧边栏 */
+/*————————————————————————————————————————————*/  
 
-/* —————————————————————————————————————————————————————————————— */
-  @media screen and (max-width: 720px) {
+  #toggleButton {
+    display:none;
+  }
 
- html, body {
-  height: 100%;
-  margin: 0; /* 确保没有默认的 margin 影响 */
-  overflow: hidden; /* 隐藏滚动条，防止出现滚动条闪烁 */
+  #sidebar {
+   display: none;
 }
-  
-  .header {
-    position: fixed;
-    height: 72px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
+
+/* 菜单按钮 */
+/*————————————————————————————————————————————*/
+.menu-button{
+  display: none;
+  }
+
+  .menu-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter:blur(20px)
+    justify-content: center;
   }
   
-    .headerbox {
-      z-index: 999;
-      display: flex;
-      position: relative;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      margin:auto 20px;
-    }
+  .ml-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   
-    .left-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  .ml-b {
+    display: block;
+    height: 3px;
+    width: 24px;
+    background-color: rgba(1, 11, 31, 0.9);
+    margin: 5px 0;
+    opacity: 1;
+    transition: opacity 0.1s ease;
+    border-radius: 10px;
+  }
   
-    .right-section {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
+  .ml-t {
+    display: flex;
+    height: 3px;
+    width: 24px;
+    transition: transform 0.2s, margin 0.2s ease;
+  }
   
+  .menu-icon.open .ml-b {
+    opacity: 0;
+    margin: 5px 0;
+    background-color: rgba(1, 11, 31, 0.9);
+  }
   
-    .brandinglogo{
-      margin-top: 6px;
-    }
+  .ml-t1, .ml-t2 {
+    position: absolute;
+    height: 3px;
+    width: 24px;
+    border-radius: 10px;
+    background-color: #333;
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-icon.open .ml-t1 {
+    transform: rotate(45deg);
+  }
+  
+  .menu-icon.open .ml-t2 {
+    transform: rotate(-45deg);
+  }
+  
 
-    .brandinglogo-svg {
-      width: auto;
-      height: 28px;
-      margin-right: auto;
-      /* 其他样式属性 */
-    }
+/* ——————————————————————————————————————————————————————————————————————————————— */
 
-    .badge-beta{
-      margin-bottom: 6px;
-       margin-left: 6px;
-       height: auto;
-       width: auto;
-       padding: 0px 4px 1px 4px;
-       font-size: 12px;
-       font-weight: 600;
-       color: rgba(0, 0, 0, 0.45);
-       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-       border: 1px solid rgba(0, 0, 0, 0.20);
-       border-radius: 6px;
-     }
-  
-  /* 首页展示图 */
-  
+
+
+
+/* ————————————————————————————— 屏幕宽度小于720px ————————————————————————————————— */
+@media screen and (max-width: 720px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .header {
+   height: 64px;
+  }
+
+  .headerbox {
+    margin: auto 20px;
+  }
+
+  .brandinglogo-svg {
+    width: auto;
+    height: 28px;
+    margin-right: auto;
+  }
+
+  .badge-beta {
+    margin-top: 10px;
+    margin-left: 6px;
+    height: auto;
+    width: auto;
+    padding: 2px 4px 2px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    border-radius: 6px;
+  }
+
   .entrancebox {
-    top:72px;
-    height: calc(100dvh - 72px);
+    top: 64px;
+    height: calc(100dvh - 64px);
     width: 100vw;
     overflow: hidden;
     position: absolute;
+    transition: width 0.4s ease; /* 调整过渡时间 */
   }
-  
+
+
   .entranceimg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    border-radius: 24px;
-    overflow: hidden;
     top: 0px;
     left: 20px;
     right: 20px;
     bottom: 24px;
-    margin: auto;
+    will-change: transform;
+    transition: width 0.4s ease;
   }
   
-   /* 图片填充 */
-    .entranceimg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持图片比例，并裁剪填充 */
-    }
-  
 
-    /* contact button */
-  .cb1 {
-      width: 80px;
-      height: 36px;
-      --button-color: #000000;
-      --tooltip-color: #fff;
-      background: var(--button-color);
-      position: relative;
-      text-align: center;
-      font-size: 15px;
-      font-weight:500;
-      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      transition: background-color 0.3s, transform 0.3s; /* 添加 transform 过渡 */
-      border-radius: 999px;
-      box-shadow: inset 0 0 0 0px #000000;
-      cursor: pointer;
+  /* 侧边栏 */
+
+  #sidebar {
+    display: block;
+    position: fixed;
+    top: 64px;
+    right: -60vh; /* 初始时隐藏在右侧 */
+    width: 60vw;
+    height: calc(100dvh - 64px);
+    transition: right 0.4s ease; /* 统一为 0.5s */
+}
+
+  #toggleButton {
+      display: block;
+      border:0px;
   }
 
-.cb1::before {
-    position: absolute;
-    font-size: 0.9rem;
-    color: #111;
-    border-radius: .25em;
+  .sidebar-open {
+    transition: width 0.4s ease;/* 添加过渡效果 */
 }
 
-.cb1::after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    left: calc(50% - 10px);
+.sidebar-open #sidebar {
+  right: 0; /* 在侧边栏打开时显示在屏幕内 */
 }
 
-.cb1::after, .cb1::before {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
+.entrancebox.sidebar-open {
+  width: 40vw;
 }
 
-.cb1-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.entrancebox.sidebar-open #sidebar {
+  display: block; /* 在侧边栏打开时显示侧边栏 */
 }
 
-.cb1-wrapper, .cb1-text, .cb1-icon {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    color: #fff;
+/* ———————————————— 侧边栏列表 ———————————————— */
+
+.guidance {
+margin-right: 20px;
+height:auto;
+  /* 你的 guidance 样式 */
 }
 
-.cb1-text {
-    top: 0
+.gd-address {
+  background-color: rgba(1, 11, 31, 0.03);
+  border-radius: 24px;
+  height: 48px;
+  padding: 0 24px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
 }
 
-.cb1-text, .cb1-icon {
-    transition: top 0.3s;
+.ad-icon {
+  fill: rgba(1, 11, 31, 0.9);
+  /* 这里放置图标的样式 */
 }
 
-.cb1-icon {
-    color: #fff;
-    top: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ad-text {
+  color: rgba(1, 11, 31, 0.9); /* 你的文字颜色 */
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--custom-font-family);
+  margin-left: 12px;
 }
 
-.cb1-icon svg {
-    width: 24px;
-    height: 24px;
+/* ———————————————— 侧边栏信息 ———————————————— */
+
+.gd-info{
+  margin-right: 20px;
+  height: calc(100% - 88px); /* 适应屏幕高度，减去 gd-address 的高度和间距 */
 }
 
-.cb1:hover {
-    background: transparent;
-    box-shadow: inset 0 0 0 2px #000000;
+.gd-info-chill {
+  width: 100%;
+  background-color: rgba(1, 11, 31, 0.03);
+  border-radius: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 使用这个属性 */
+  align-items: center;
 }
 
-.cb1:hover .cb1-text {
-    top: -100%;
+.gd-info-a {
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  margin-top: 35%; /* 尝试添加这行 */
 }
 
-.cb1:hover .cb1-icon {
-    top: 0;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.cb1:hover::before, .cb1:hover::after {
-    opacity: 1;
-    visibility: visible;
+
+.svg-container{
+  width: 25vw;
+  height: 25vw;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 8px;
+  opacity: 0.35;
+  animation: rotate 6s linear infinite; /* 2s 表示旋转一周的时间，linear 表示匀速，infinite 表示无限次循环 */
+}
+  
 }
 
-.cb1:active {
+.gd-info-a p {
+  font-family: var(--custom-font-family);
+  margin: 8px 0 0 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(1, 11, 31, 0.65);
+}
+
+.gd-info-a h2 {
+  font-family: var(--custom-font-family);
+  font-size: 20px;
+  margin: 8px 0 0 0;
+}
+
+.gd-info-b {
+  width: calc(100% - 40px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* contact button */
+.cb1{
+  display: none;
+}
+
+.cb2 {
+  height: 48px;
+  background-color: #000000;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--custom-font-family);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 0 0 0px #000000;
+}
+
+.cb2-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--custom-font-family);
+  color: #fff;
+}
+
+.cb2::before {
+  position: absolute;
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+}
+
+.cb2::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  left: calc(50% - 10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.cb2:hover {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px #000000;
+}
+
+.cb2:hover .cb2-text {
+  top: -100%;
+  transition-timing-function: ease;
+}
+
+.cb2:hover .cb2-icon {
+  top: 0;
+  transition-timing-function: ease;
+}
+
+.cb2:hover::before,
+.cb2:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cb2:active {
   transform: scale(0.9);
+  transition-timing-function: ease;
 }
 
+.cb2-icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.cb2-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cb2-wrapper,
+.cb2-text,
+.cb2-icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.cb2-text,
+.cb2-icon {
+  transition: top 0.3s;
+}
+
+
+/* ———————————————————————————————————————— */
+
+
+
+
+}
+
