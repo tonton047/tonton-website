@@ -21,12 +21,9 @@ function handleMouseUp() {
 function openEmailWindow() {
   // 使用 window.open 打开新窗口，并传递 mailto 链接
   const emailAddress = 'tong0738@outlook.com';
-  const subject = 'Hello';
-  const body = '"Hi nice to meet you, Any question just let me know ;)"';
-  const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   // 使用 window.open 打开发送邮件的窗口
-  window.open(mailtoLink, '_blank');
+  window.open(`mailto:${emailAddress}`, '_blank');
 }
 
 /* 窗口小于720时 */
