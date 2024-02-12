@@ -23,9 +23,14 @@
                     </svg>
                 </div>
                 <div class="badge-beta">beta</div>
-                
-            </div>
+              </div>
+              
             <div class="right-section">
+              
+              <div class="change-language" onclick="changeLanguage()">
+                <div class="change-language-font"> EN </div>
+              </div>
+
               <div id="toggleButton" onclick="toggleSidebar()">
                 <div class="menu-icon" onclick="toggleIcon()">
                   <div class="ml-container">
@@ -88,7 +93,7 @@
                   
                       <div class="swiper-pagination"></div>
                       
-                        <div class="swiperiocn1">
+                        <div class="swipericon1">
                           <div class="swiper-button-prev">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5502 12L16.9002 19.35C17.1502 19.6 17.271 19.8917 17.2627 20.225C17.2544 20.5583 17.1252 20.85 16.8752 21.1C16.6252 21.35 16.3335 21.475 16.0002 21.475C15.6669 21.475 15.3752 21.35 15.1252 21.1L7.4252 13.425C7.2252 13.225 7.0752 13 6.9752 12.75C6.8752 12.5 6.8252 12.25 6.8252 12C6.8252 11.75 6.8752 11.5 6.9752 11.25C7.0752 11 7.2252 10.775 7.4252 10.575L15.1252 2.875C15.3752 2.625 15.671 2.50417 16.0127 2.5125C16.3544 2.52084 16.6502 2.65 16.9002 2.9C17.1502 3.15 17.2752 3.44167 17.2752 3.775C17.2752 4.10834 17.1502 4.4 16.9002 4.65L9.5502 12Z" fill="white"/>
@@ -96,7 +101,7 @@
                           </div>
                         </div>
         
-                        <div class="swiperiocn1">
+                        <div class="swipericon1">
                           <div class="swiper-button-next">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M14.4751 12L7.12511 4.65C6.87511 4.4 6.75428 4.10417 6.76261 3.7625C6.77094 3.42083 6.90011 3.125 7.15011 2.875C7.40011 2.625 7.69594 2.5 8.03761 2.5C8.37928 2.5 8.67511 2.625 8.92511 2.875L16.6001 10.575C16.8001 10.775 16.9501 11 17.0501 11.25C17.1501 11.5 17.2001 11.75 17.2001 12C17.2001 12.25 17.1501 12.5 17.0501 12.75C16.9501 13 16.8001 13.225 16.6001 13.425L8.90011 21.125C8.65011 21.375 8.35844 21.4958 8.02511 21.4875C7.69178 21.4792 7.40011 21.35 7.15011 21.1C6.90011 20.85 6.77511 20.5542 6.77511 20.2125C6.77511 19.8708 6.90011 19.575 7.15011 19.325L14.4751 12Z" fill="white"/>
@@ -112,10 +117,11 @@
 
           <div class="guidance">
             <div class="gd-address">
-                <svg class="ad-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4C3.34315 4 2 5.34315 2 7V17C2 18.6569 3.34315 20 5 20H19C20.6569 20 22 18.6569 22 17V7C22 5.34315 20.6569 4 19 4H5ZM4.44361 6.16895C4.60268 6.06225 4.79407 6 5 6H19C19.2718 6 19.5182 6.10842 19.6985 6.28436L12.6835 10.5198C12.3656 10.7117 11.9676 10.7117 11.6497 10.5198L4.44361 6.16895ZM4 8.23738V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V8.43857L13.7172 12.232C12.7636 12.8077 11.5696 12.8077 10.616 12.232L4 8.23738Z" fill="black"/>
-                </svg>
-                <p class="ad-text">Home page</p>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18.75H9V13.75C9 13.4667 9.09583 13.2292 9.2875 13.0375C9.47917 12.8458 9.71667 12.75 10 12.75H14C14.2833 12.75 14.5208 12.8458 14.7125 13.0375C14.9042 13.2292 15 13.4667 15 13.75V18.75H18V9.75L12 5.25L6 9.75V18.75ZM4 18.75V9.75C4 9.43333 4.07083 9.13333 4.2125 8.85C4.35417 8.56667 4.55 8.33333 4.8 8.15L10.8 3.65C11.15 3.38333 11.55 3.25 12 3.25C12.45 3.25 12.85 3.38333 13.2 3.65L19.2 8.15C19.45 8.33333 19.6458 8.56667 19.7875 8.85C19.9292 9.13333 20 9.43333 20 9.75V18.75C20 19.3 19.8042 19.7708 19.4125 20.1625C19.0208 20.5542 18.55 20.75 18 20.75H14C13.7167 20.75 13.4792 20.6542 13.2875 20.4625C13.0958 20.2708 13 20.0333 13 19.75V14.75H11V19.75C11 20.0333 10.9042 20.2708 10.7125 20.4625C10.5208 20.6542 10.2833 20.75 10 20.75H6C5.45 20.75 4.97917 20.5542 4.5875 20.1625C4.19583 19.7708 4 19.3 4 18.75Z" fill="#010B1F" fill-opacity="0.9"/>
+                </svg>                
+                
+                <p class="ad-text translate" data-translation-key="welcome">欢迎访问</p>
             </div>
           </div>
 
@@ -130,15 +136,17 @@
                     </svg>
 
                 </div>
-                <h2>Site in progress</h2>
-                <p>Click the button below to connect with me and let me know you're following this page. I'll invite you to revisit when the time is right</p>
+                <h2 class="translate" data-translation-key="siteInProgressTitle">站点正在搭建中</h2>
+                <p class="translate" data-translation-key="siteInProgressText">
+                  点击下方按钮让我知道你正在关注该页面的搭建进度，我将一切准备就绪后邀请你再次访问
+                </p>
               </div>
             
               <!-- Section B -->
               <div class="gd-info-b">
                 <div id="contactButton" class="cb2" ontouchstart="handleTouchStart()" ontouchend="handleTouchEnd()" onclick="handleButtonClick()">
                   <div class="cb2-wrapper">
-                      <div class="cb2-text">Contact</div>
+                      <div class="cb2-text translate" data-translation-key="contact">与我联系</div>
                       <span class="cb2-icon">
                           <svg class="cb2-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4C3.34315 4 2 5.34315 2 7V17C2 18.6569 3.34315 20 5 20H19C20.6569 20 22 18.6569 22 17V7C22 5.34315 20.6569 4 19 4H5ZM4.44361 6.16895C4.60268 6.06225 4.79407 6 5 6H19C19.2718 6 19.5182 6.10842 19.6985 6.28436L12.6835 10.5198C12.3656 10.7117 11.9676 10.7117 11.6497 10.5198L4.44361 6.16895ZM4 8.23738V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V8.43857L13.7172 12.232C12.7636 12.8077 11.5696 12.8077 10.616 12.232L4 8.23738Z" fill="black"/>
@@ -162,7 +170,7 @@
 
 
 
-<script src="js/script.js"></script>
+<script defer src="js/script.js"></script>
 <script src="js/swiper.js"></script>
 
 </body>

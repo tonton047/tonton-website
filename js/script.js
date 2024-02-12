@@ -1,12 +1,25 @@
 // script.js
 
+
+
+// 防抖函数实现
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    const later = function () {
+      timeout = null;
+      func.apply(context, args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function handleButtonClick() {
   const contactButton = document.getElementById('contactButton');
-
-  // 添加按钮点击后的样式
   contactButton.classList.add('cb1-clicked');
-
-  // 在新窗口中打开邮件窗口
   openEmailWindow();
 }
 
@@ -26,19 +39,17 @@ function openEmailWindow() {
   const body = '"Hi nice to meet you, Any question just let me know ;)"';
 
   if (window.innerWidth >= 720) {
-    // 使用 window.open 打开发送邮件的窗口，包含主题和正文
     window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
   } else {
-    // 使用 window.open 打开发送邮件的窗口，仅包含邮箱地址
     window.open(`mailto:${emailAddress}`, '_blank');
   }
 }
 
-
-
 /* swiper */
-let swiperOptions = {
+const swiperOptions = {
   loop: true,
+  slidesPerView: 1, // 一次只显示一张图片
+  spaceBetween: 0, // 设置图片间距，根据需要调整
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
@@ -50,37 +61,26 @@ let swiperOptions = {
   },
   keyboard: true,
   mousewheel: false,
-  
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false
-  }
-  
 };
 
-// 初始化Swiper
-let swiper = new Swiper(".swiper", swiperOptions);
+// 初始化 Swiper
+const swiper = new Swiper(".swiper", swiperOptions);
 
-// 监听窗口大小变化事件
-window.addEventListener("resize", () => {
-  // 获取当前窗口宽度
+// 在窗口大小变化事件中使用防抖函数
+const handleResizeDebounced = debounce(() => {
   let windowWidth = window.innerWidth;
-
-  // 根据窗口宽度判断是否启用 mousewheel
   if (windowWidth < 720) {
     swiper.mousewheel.enable();
   } else {
     swiper.mousewheel.disable();
   }
-});
+}, 300); // 300 毫秒为间隔
+
+window.addEventListener("resize", handleResizeDebounced);
+
 
 // 初始时检查窗口宽度，以决定是否启用 mousewheel
-if (window.innerWidth < 720) {
-  swiper.mousewheel.enable();
-} else {
-  swiper.mousewheel.disable();
-}
-
+handleResizeDebounced();
 
 /* 侧边栏 */
 
@@ -89,34 +89,70 @@ function toggleSidebar() {
   const entranceBox = document.querySelector('.entrancebox');
   const imageWrappers = document.querySelectorAll('.image__wrapper');
 
-  // 切换 sidebar 和 entrancebox 的类
   sidebar.classList.toggle('sidebar-open');
   entranceBox.classList.toggle('sidebar-open');
-
-  // 切换 right 的值，从 0 到 -50vh，或者从 -50vh 到 0
   sidebar.style.right = sidebar.style.right === '0px' ? '-60vh' : '0';
-
-  // 切换图像的模糊效果
+  entranceBox.style.marginRight = entranceBox.classList.contains('sidebar-open') ? '60vh' : '0';
   imageWrappers.forEach(wrapper => {
     // 检查是否已经应用了模糊效果
     const isBlurred = wrapper.classList.contains('blur');
 
-    // 根据当前状态切换模糊效果和添加过渡类
+    // 根据当前状态切换模糊效果
     wrapper.classList.toggle('blur', !isBlurred);
     wrapper.classList.toggle('unblur', isBlurred);
   });
-
-  // 切换 entrancebox 的 margin-right
-  entranceBox.style.marginRight = entranceBox.classList.contains('sidebar-open') ? '60vh' : '0';
 }
 
-
-
-
 /* menu-icon 动效 */
-/*————————————————————————————————————————————*/
 function toggleIcon() {
   const icon = document.querySelector('.menu-icon');
   icon.classList.toggle('open');
 }
-/*————————————————————————————————————————————*/
+
+
+/* —————————— 切换语言 —————————— */
+function changeLanguage() {
+  // 获取所有需要切换语言的元素
+  var elementsToTranslate = document.querySelectorAll('.translate');
+
+  // 获取当前语言
+  var currentLanguage = document.querySelector('.change-language-font').innerText;
+
+  // 定义语言对应的文本
+  var translations = {
+    'EN': {
+      'welcome': '欢迎访问',
+      'siteInProgressTitle': '站点正在搭建中',
+      'siteInProgressText': '点击下方按钮让我知道你正在关注该页面的搭建进度，我将一切准备就绪后邀请你再次访问',
+      'contact': '与我联系'
+      // 添加其他需要翻译的文本...
+    },
+    'CN': {
+      // 添加其他需要翻译的文本...
+      'welcome': 'Welcome page',
+      'siteInProgressTitle': 'Site in progress',
+      'siteInProgressText': 'Click the button below to connect with me and let me know you\'re following this page. I\'ll invite you to revisit when the time is right',
+      'contact': 'Contact'
+    }
+  };
+
+  // 判断要切换到的语言
+  var targetLanguage = (currentLanguage === 'EN') ? 'CN' : 'EN';
+
+  // 遍历所有需要翻译的元素
+  elementsToTranslate.forEach(function (element) {
+    // 获取元素的翻译 key
+    var translationKey = element.getAttribute('data-translation-key');
+
+    // 根据语言和 key 获取翻译后的文本
+    var translatedText = translations[targetLanguage][translationKey];
+
+    // 更新元素的文本内容
+    element.innerText = translatedText;
+  });
+
+  // 切换切换语言按钮的文本
+  document.querySelector('.change-language-font').innerText = targetLanguage;
+}
+
+

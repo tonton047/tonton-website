@@ -1,299 +1,404 @@
 body{
-    padding: 0;
-    margin: 0;
-    
-  }
-
-  :root {
-    --custom-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  * {
-    -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
-    outline: none;
-  }
+  padding: 0;
+  margin: 0;
   
-
-.header {
-  position: fixed;
-  height: 72px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter:blur(20px)
 }
 
-  .headerbox {
-    z-index: 999;
-    display: flex;
-    position: relative;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    margin:auto 40px;
-  }
+:root {
+  --custom-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-  .left-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .right-section {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
+* {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  outline: none;
+}
 
 
-  .brandinglogo{
-    margin-top: 6px;
-  }
+.header {
+position: fixed;
+height: 72px;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 999;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: rgba(255,255,255,0.8);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter:blur(20px)
+}
 
-  .brandinglogo-svg {
-    width: 136px;
-    height: 32px;
-    /* 其他样式属性 */
-  }
+.headerbox {
+  z-index: 999;
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin:auto 40px;
+}
 
-  .badge-beta{
-   margin-bottom: 6px;
-    margin-left: 6px;
-    height: auto;
-    width: auto;
-    padding: 1px 6px 2px 6px;
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.45);
-    font-family: var(--custom-font-family);
-    border: 1px solid rgba(0, 0, 0, 0.20);
-    border-radius: 6px;
-  }
+.left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.brandinglogo{
+  margin-top: 6px;
+}
+
+.brandinglogo-svg {
+  width: 136px;
+  height: 32px;
+  /* 其他样式属性 */
+}
+
+.badge-beta{
+ margin-bottom: 6px;
+  margin-left: 6px;
+  height: auto;
+  width: auto;
+  padding: 1px 6px 2px 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.45);
+  font-family: var(--custom-font-family);
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  border-radius: 6px;
+}
 
 /* 首页展示图 */
 
 .entrancebox {
-  top:72px;
-  height: calc(100vh - 72px);
-  width: 100vw;
-  overflow: hidden;
-  position: absolute;
+top:72px;
+height: calc(100vh - 72px);
+width: 100vw;
+overflow: hidden;
+position: absolute;
 }
 
 .entranceimg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  border-radius: 24px;
-  overflow: hidden;
-  top: 6px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
-  margin: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+border-radius: 24px;
+overflow: hidden;
+top: 6px;
+left: 40px;
+right: 40px;
+bottom: 40px;
+margin: auto;
 }
 
- /* 图片填充 */
-  .entranceimg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 保持图片比例，并裁剪填充 */
-  }
-
- /* contact button */
-
- @media screen and (max-width: 720px) {
-  .cb1 {
-    display: none;
-  }
+/* 图片填充 */
+.entranceimg img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* 保持图片比例，并裁剪填充 */
 }
 
+/* —————————— Contact button —————————— */
+
+@media screen and (max-width: 720px) {
+.cb1 {
+  display: none;
+}
+}
 
 .cb1 {
-  width: 88px;
-  height: 40px;
-  padding: 0 4px;
-  --button-color: #000000;
-  --tooltip-color: #fff;
-  background: var(--button-color);
-  position: relative;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--custom-font-family);
-  transition: background-color 0.3s, transform 0.3s; /* 添加 transform 过渡 */
-  border-radius: 999px;
-  box-shadow: inset 0 0 0 0px #000000;
-  cursor: pointer;
+width: 88px;
+height: 40px;
+padding: 0 4px;
+--button-color: #000000;
+--tooltip-color: #fff;
+background: var(--button-color);
+position: relative;
+text-align: center;
+font-size: 16px;
+font-weight: 500;
+font-family: var(--custom-font-family);
+transition: background-color 0.3s, transform 0.3s; /* 添加 transform 过渡 */
+border-radius: 999px;
+box-shadow: inset 0 0 0 0px #000000;
+cursor: pointer;
+transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
+}
+
+.cb1::before {
+    position: absolute;
+    font-size: 0.9rem;
+    color: #111;
+    border-radius: .25em;
+}
+
+.cb1::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    left: calc(50% - 10px);
+}
+
+.cb1::after, .cb1::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.cb1-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cb1-wrapper, .cb1-text, .cb1-icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+}
+
+.cb1-text {
+    top: 0
+}
+
+.cb1-text, .cb1-icon {
+    transition: top 0.3s;
+}
+
+.cb1-icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cb1-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cb1:hover {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px #000000;
+    transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
+}
+
+.cb1:hover .cb1-text {
+    top: -100%;
+}
+
+.cb1:hover .cb1-icon {
+    top: 0;
+}
+
+.cb1:hover::before, .cb1:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cb1:active {
+  transform: scale(0.9);
   transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
 }
-  
-  .cb1::before {
-      position: absolute;
-      font-size: 0.9rem;
-      color: #111;
-      border-radius: .25em;
-  }
-  
-  .cb1::after {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
-      left: calc(50% - 10px);
-  }
-  
-  .cb1::after, .cb1::before {
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s;
-  }
-  
-  .cb1-text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .cb1-wrapper, .cb1-text, .cb1-icon {
-      overflow: hidden;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      color: #fff;
-  }
-  
-  .cb1-text {
-      top: 0
-  }
-  
-  .cb1-text, .cb1-icon {
-      transition: top 0.3s;
-  }
-  
-  .cb1-icon {
-      color: #fff;
-      top: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .cb1-icon svg {
-      width: 24px;
-      height: 24px;
-  }
-  
-  .cb1:hover {
-      background: transparent;
-      box-shadow: inset 0 0 0 2px #000000;
-      transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
-  }
-  
-  .cb1:hover .cb1-text {
-      top: -100%;
-  }
-  
-  .cb1:hover .cb1-icon {
-      top: 0;
-  }
-  
-  .cb1:hover::before, .cb1:hover::after {
-      opacity: 1;
-      visibility: visible;
-  }
-  
-  .cb1:active {
-    transform: scale(0.9);
-    transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
-  }
 
 
-  /* 侧边栏 */
+/* 侧边栏 */
 /*————————————————————————————————————————————*/  
 
-  #toggleButton {
-    display:none;
-  }
+#toggleButton {
+  display:none;
+}
 
-  #sidebar {
-   display: none;
+#sidebar {
+ display: none;
 }
 
 /* 菜单按钮 */
 /*————————————————————————————————————————————*/
 .menu-button{
-  display: none;
-  }
+display: none;
+}
 
-  .menu-icon {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .ml-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .ml-b {
-    display: block;
-    height: 3px;
-    width: 24px;
-    background-color: rgba(1, 11, 31, 0.9);
-    margin: 5px 0;
-    opacity: 1;
-    transition: opacity 0.1s ease;
-    border-radius: 10px;
-  }
-  
-  .ml-t {
-    display: flex;
-    height: 3px;
-    width: 24px;
-    transition: transform 0.2s, margin 0.2s ease;
-  }
-  
-  .menu-icon.open .ml-b {
-    opacity: 0;
-    margin: 5px 0;
-    background-color: rgba(1, 11, 31, 0.9);
-  }
-  
-  .ml-t1, .ml-t2 {
-    position: absolute;
-    height: 3px;
-    width: 24px;
-    border-radius: 10px;
-    background-color: #333;
-    transition: transform 0.2s ease;
-  }
-  
-  .menu-icon.open .ml-t1 {
-    transform: rotate(45deg);
-  }
-  
-  .menu-icon.open .ml-t2 {
-    transform: rotate(-45deg);
-  }
-  
+.menu-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ml-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ml-b {
+  display: block;
+  height: 3px;
+  width: 24px;
+  background-color: rgba(1, 11, 31, 0.9);
+  margin: 5px 0;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+  border-radius: 10px;
+}
+
+.ml-t {
+  display: flex;
+  height: 3px;
+  width: 24px;
+  transition: transform 0.2s, margin 0.2s ease;
+}
+
+.menu-icon.open .ml-b {
+  opacity: 0;
+  margin: 5px 0;
+  background-color: rgba(1, 11, 31, 0.9);
+}
+
+.ml-t1, .ml-t2 {
+  position: absolute;
+  height: 3px;
+  width: 24px;
+  border-radius: 10px;
+  background-color: #333;
+  transition: transform 0.2s ease;
+}
+
+.menu-icon.open .ml-t1 {
+  transform: rotate(45deg);
+}
+
+.menu-icon.open .ml-t2 {
+  transform: rotate(-45deg);
+}
+
+/* —————————— Swiper —————————— */
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #292929;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.swiper {
+  height: 100%;
+  width: 100%;
+}
+
+.image__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.image__wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 分页器 */
+.swiper-pagination {
+  position: absolute;
+  bottom: 24px !important;
+  text-align: center;
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px !important;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+/* 箭头 */
+
+/* 鼠标进入 .entranceimg 区域时显示按钮 */
+.entranceimg:hover .swiper-button-prev,
+.entranceimg:hover .swiper-button-next {
+  opacity: 0.65;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+/* 鼠标悬停在按钮上时透明度变为 1 */
+.entranceimg .swiper-button-prev:hover,
+.entranceimg .swiper-button-next:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+
+.swiper-button-prev {
+  left: 24px;
+}
+
+.swiper-button-next {
+  right: 24px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+/* 箭头图标 */
+.swipericon1 {
+  opacity: 1;
+}
+
+
+/* —————————— change - language —————————— */
+.change-language{
+display:none;
+}
+
 
 /* ——————————————————————————————————————————————————————————————————————————————— */
 
@@ -302,90 +407,127 @@ body{
 
 /* ————————————————————————————— 屏幕宽度小于720px ————————————————————————————————— */
 @media screen and (max-width: 720px) {
-  html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  .header {
-   height: 64px;
-  }
-
-  .headerbox {
-    margin: auto 20px;
-  }
-
-  .brandinglogo-svg {
-    width: auto;
-    height: 28px;
-    margin-right: auto;
-  }
-
-  .badge-beta {
-    margin-top: 10px;
-    margin-left: 6px;
-    height: auto;
-    width: auto;
-    padding: 2px 4px 2px 4px;
-    font-size: 12px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(0, 0, 0, 0.20);
-    border-radius: 6px;
-  }
-
-  .entrancebox {
-    top: 64px;
-    height: calc(100dvh - 64px);
-    width: 100vw;
-    overflow: hidden;
-    position: absolute;
-    transition: width 0.4s ease; /* 调整过渡时间 */
-  }
-
-
-  .entranceimg {
-    top: 0px;
-    left: 20px;
-    right: 20px;
-    bottom: 24px;
-    will-change: transform;
-    transition: width 0.4s ease;
-  }
-  
-
-  /* 侧边栏 */
-
-  #sidebar {
-    display: block;
-    position: fixed;
-    top: 64px;
-    right: -60vh; /* 初始时隐藏在右侧 */
-    width: 60vw;
-    height: calc(100dvh - 64px);
-    transition: right 0.4s ease; /* 统一为 0.5s */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
-  #toggleButton {
-      display: block;
-      border:0px;
-  }
+.header {
+ height: 64px;
+}
 
-  .sidebar-open {
-    transition: width 0.4s ease;/* 添加过渡效果 */
+.headerbox {
+  margin: auto 20px;
+}
+
+.header-selection{
+  width: auto;
+  position:relative;
+}
+
+.brandinglogo-svg {
+  width: auto;
+  height: 28px;
+  margin-right: auto;
+}
+
+/* —————————— change - language —————————— */
+.change-language{
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px;
+  margin-right: 12px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.change-language:hover {
+  background-color: #f0f0f0;
+  transition: 0.2s;
+}
+
+.change-language-font{
+  font-size: 16px;
+  font-weight: bolder;
+  color:rgba(1, 11, 31, 0.9);
+  transition :color 1s ease; /* 过渡颜色变化，持续0.5秒，使用ease函数 */
+}
+
+.translate {
+  transition: opacity 1s ease; /* 过渡透明度变化，持续0.5秒，使用ease函数 */
+}
+
+
+.badge-beta {
+  margin-top: 10px;
+  margin-left: 6px;
+  height: auto;
+  width: auto;
+  padding: 2px 4px 2px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  border-radius: 6px;
+}
+
+
+
+
+
+
+.entrancebox {
+  top: 64px;
+  height: calc(100dvh - 64px);
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  transition: width 0.4s ease; /* 调整过渡时间 */
+}
+
+
+.entranceimg {
+  top: 0px;
+  left: 20px;
+  right: 20px;
+  bottom: 24px;
+  will-change: transform;
+  transition: width 0.4s ease;
+}
+
+
+/* 侧边栏 */
+
+#sidebar {
+  display: block;
+  position: fixed;
+  top: 64px;
+  right: -60vh; /* 初始时隐藏在右侧 */
+  width: 60vw;
+  height: calc(100dvh - 64px);
+  transition: right 0.4s ease; /* 统一为 0.5s */
+}
+
+#toggleButton {
+    display: block;
+    border:0px;
+}
+
+.sidebar-open {
+  transition: width 0.4s ease;/* 添加过渡效果 */
 }
 
 .sidebar-open #sidebar {
-  right: 0; /* 在侧边栏打开时显示在屏幕内 */
+right: 0; /* 在侧边栏打开时显示在屏幕内 */
 }
 
 .entrancebox.sidebar-open {
-  width: 40vw;
+width: 40vw;
 }
 
 .entrancebox.sidebar-open #sidebar {
-  display: block; /* 在侧边栏打开时显示侧边栏 */
+display: block; /* 在侧边栏打开时显示侧边栏 */
 }
 
 /* ———————————————— 侧边栏列表 ———————————————— */
@@ -393,200 +535,236 @@ body{
 .guidance {
 margin-right: 20px;
 height:auto;
-  /* 你的 guidance 样式 */
+/* 你的 guidance 样式 */
 }
 
 .gd-address {
-  background-color: rgba(1, 11, 31, 0.06);
-  border-radius: 24px;
-  height: 48px;
-  padding: 0 24px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
+background-color: rgba(1, 11, 31, 0.06);
+border-radius: 24px;
+height: 48px;
+padding: 0 24px;
+margin-bottom: 16px;
+display: flex;
+align-items: center;
 }
 
 .ad-icon {
-  fill: rgba(1, 11, 31, 0.9);
-  /* 这里放置图标的样式 */
+fill: rgba(1, 11, 31, 0.9);
+/* 这里放置图标的样式 */
 }
 
 .ad-text {
-  color: rgba(1, 11, 31, 0.9); /* 你的文字颜色 */
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--custom-font-family);
-  margin-left: 12px;
+color: rgba(1, 11, 31, 0.9); /* 你的文字颜色 */
+font-size: 16px;
+font-weight: 500;
+font-family: var(--custom-font-family);
+margin-left: 12px;
 }
 
 /* ———————————————— 侧边栏信息 ———————————————— */
 
 .gd-info{
-  margin-right: 20px;
-  height: calc(100% - 88px); /* 适应屏幕高度，减去 gd-address 的高度和间距 */
+margin-right: 20px;
+height: calc(100% - 88px); /* 适应屏幕高度，减去 gd-address 的高度和间距 */
 }
 
 .gd-info-chill {
-  width: 100%;
-  background-color: rgba(1, 11, 31, 0.06);
-  border-radius: 24px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* 使用这个属性 */
-  align-items: center;
+width: 100%;
+background-color: rgba(1, 11, 31, 0.06);
+border-radius: 24px;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between; /* 使用这个属性 */
+align-items: center;
 }
 
 .gd-info-a {
-  width: calc(100% - 40px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
-  margin-top: 35%; /* 尝试添加这行 */
+width: calc(100% - 40px);
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 16px;
+margin-top: 35%; /* 尝试添加这行 */
 }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(360deg);
+}
 }
 
 
 .svg-container{
-  width: 25vw;
-  height: 25vw;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  margin-bottom: 8px;
-  opacity: 0.35;
-  animation: rotate 6s linear infinite; /* 2s 表示旋转一周的时间，linear 表示匀速，infinite 表示无限次循环 */
-}
-  
+width: 25vw;
+height: 25vw;
+display: flex; 
+align-items: center; 
+justify-content: center;
+margin-bottom: 8px;
+opacity: 0.35;
+animation: rotate 6s linear infinite; /* 2s 表示旋转一周的时间，linear 表示匀速，infinite 表示无限次循环 */
 }
 
+
 .gd-info-a p {
-  font-family: var(--custom-font-family);
-  margin: 8px 0 0 0;
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.5;
-  color: rgba(1, 11, 31, 0.65);
+font-family: var(--custom-font-family);
+margin: 8px 0 0 0;
+text-align: center;
+font-size: 15px;
+line-height: 1.5;
+color: rgba(1, 11, 31, 0.65);
 }
 
 .gd-info-a h2 {
-  font-family: var(--custom-font-family);
-  font-size: 20px;
-  margin: 8px 0 0 0;
+font-family: var(--custom-font-family);
+font-size: 20px;
+margin: 8px 0 0 0;
 }
 
 .gd-info-b {
-  width: calc(100% - 40px);
-  text-align: center;
-  margin-bottom: 20px;
+width: calc(100% - 40px);
+text-align: center;
+margin-bottom: 20px;
 }
 
 /* contact button */
 
 .cb2 {
-  height: 48px;
-  background-color: #000000;
-  position: relative;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--custom-font-family);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: inset 0 0 0 0px #000000;
+height: 48px;
+background-color: #000000;
+position: relative;
+text-align: center;
+font-size: 16px;
+font-weight: 500;
+font-family: var(--custom-font-family);
+border-radius: 999px;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+box-shadow: inset 0 0 0 0px #000000;
 }
 
 .cb2-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--custom-font-family);
-  color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+font-weight: 500;
+font-family: var(--custom-font-family);
+color: #fff;
 }
 
 .cb2::before {
-  position: absolute;
-  font-size: 0.9rem;
-  color: #111;
-  border-radius: .25em;
+position: absolute;
+font-size: 0.9rem;
+color: #111;
+border-radius: .25em;
 }
 
 .cb2::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  left: calc(50% - 10px);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
+position: absolute;
+width: 0;
+height: 0;
+border: 10px solid transparent;
+left: calc(50% - 10px);
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s;
 }
 
 .cb2:hover {
-  background: transparent;
-  box-shadow: inset 0 0 0 2px #000000;
+background: transparent;
+box-shadow: inset 0 0 0 2px #000000;
 }
 
 .cb2:hover .cb2-text {
-  top: -100%;
-  transition-timing-function: ease;
+top: -100%;
+transition-timing-function: ease;
 }
 
 .cb2:hover .cb2-icon {
-  top: 0;
-  transition-timing-function: ease;
+top: 0;
+transition-timing-function: ease;
 }
 
 .cb2:hover::before,
 .cb2:hover::after {
-  opacity: 1;
-  visibility: visible;
+opacity: 1;
+visibility: visible;
 }
 
 .cb2:active {
-  transform: scale(0.9);
-  transition-timing-function: ease;
+transform: scale(0.9);
+transition-timing-function: ease;
 }
 
 .cb2-icon {
-  color: #fff;
-  top: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+color: #fff;
+top: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .cb2-icon svg {
-  width: 24px;
-  height: 24px;
+width: 24px;
+height: 24px;
 }
 
 .cb2-wrapper,
 .cb2-text,
 .cb2-icon {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  color: #fff;
+overflow: hidden;
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0;
+color: #fff;
 }
 
 .cb2-text,
 .cb2-icon {
-  transition: top 0.3s;
+transition: top 0.3s;
+}
+
+/* —————————— swiper < 720 —————————— */
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 16px !important;
+  text-align: center;
+  width: 100%;
+}
+
+.swiper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+/* 添加模糊效果的 CSS 样式 */
+.image__wrapper.blur {
+filter: blur(20px); /* 您可以根据需要调整模糊程度 */
+transition: filter 0.5s ease;
+}
+
+
+/* 添加清晰效果的 CSS 样式 */
+.image__wrapper.unblur {
+filter: none;
+transition: filter 0.5s ease;
 }
 
 
@@ -596,4 +774,3 @@ height:auto;
 
 
 }
-
