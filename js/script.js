@@ -46,37 +46,31 @@ function openEmailWindow() {
 }
 
 /* swiper */
-const swiperOptions = {
-  loop: true,
-  slidesPerView: 1, // 一次只显示一张图片
-  spaceBetween: 0, // 设置图片间距，根据需要调整
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
-    clickable: true
-  },
-  keyboard: true,
-  mousewheel: false,
-};
+document.addEventListener("DOMContentLoaded", function() {
+  var swiper = new Swiper(".swiper", {
 
-// 初始化 Swiper
-const swiper = new Swiper(".swiper", swiperOptions);
+      autoplay: {
+        delay: 2500,
+      },
 
-// 在窗口大小变化事件中使用防抖函数
-const handleResizeDebounced = debounce(() => {
-  let windowWidth = window.innerWidth;
-  if (windowWidth < 720) {
-    swiper.mousewheel.enable();
-  } else {
-    swiper.mousewheel.disable();
-  }
-}, 300); // 300 毫秒为间隔
+    speed:400,
 
-window.addEventListener("resize", handleResizeDebounced);
+
+    slidesPerView: 1,
+
+    spaceBetween: 0,
+
+    loopAddBlankSlides:true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+});
 
 
 // 初始时检查窗口宽度，以决定是否启用 mousewheel
@@ -87,7 +81,7 @@ handleResizeDebounced();
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const entranceBox = document.querySelector('.entrancebox');
-  const imageWrappers = document.querySelectorAll('.image__wrapper');
+  const imageWrappers = document.querySelectorAll('.swiper-slide');
 
   sidebar.classList.toggle('sidebar-open');
   entranceBox.classList.toggle('sidebar-open');
@@ -123,7 +117,7 @@ function changeLanguage() {
     'EN': {
       'welcome': '欢迎访问',
       'siteInProgressTitle': '站点正在搭建中',
-      'siteInProgressText': '点击下方按钮让我知道你正在关注该页面的搭建进度，我将一切准备就绪后邀请你再次访问',
+      'siteInProgressText': '点击下方按钮,让我知道你正在关注该页面的搭建进度，我将在一切准备就绪后邀请你再次访问',
       'contact': '与我联系'
       // 添加其他需要翻译的文本...
     },

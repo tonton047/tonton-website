@@ -77,36 +77,6 @@ backdrop-filter: blur(20px);
   border-radius: 6px;
 }
 
-/* 首页展示图 */
-
-.entrancebox {
-top:72px;
-height: calc(100vh - 72px);
-width: 100vw;
-overflow: hidden;
-position: absolute;
-}
-
-.entranceimg {
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-border-radius: 24px;
-overflow: hidden;
-top: 6px;
-left: 40px;
-right: 40px;
-bottom: 40px;
-margin: auto;
-}
-
-/* 图片填充 */
-.entranceimg img {
-width: 100%;
-height: 100%;
-object-fit: cover; /* 保持图片比例，并裁剪填充 */
-}
 
 /* —————————— Contact button —————————— */
 
@@ -294,36 +264,40 @@ display: none;
 }
 
 /* —————————— Swiper —————————— */
-.container {
-  width: 100%;
-  height: 100%;
-  background-color: #292929;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
+
+/* 首页展示图 */
+
+.entrancebox {
+  position: relative;
+  top: 72px;
+  height: calc(100vh - 72px);
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
 }
 
 .swiper {
-  height: 100%;
-  width: 100%;
+  width: calc(100% - 80px); /* 100%减去左右40px的边距 */
+  height: calc(100% - 46px); /* 100%减去上下40px的边距 */
+  margin: 6px 40px 40px 40px;
+  border-radius: 24px;
 }
 
-.image__wrapper {
-  width: 100%;
-  height: 100%;
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
 }
 
-.image__wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.swiper-slide img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* 保持图片比例，并裁剪填充 */
+  
 }
 
 /* 分页器 */
+
 .swiper-pagination {
   position: absolute;
   bottom: 24px !important;
@@ -347,18 +321,19 @@ display: none;
   opacity: 1;
 }
 
+
 /* 箭头 */
 
 /* 鼠标进入 .entranceimg 区域时显示按钮 */
-.entranceimg:hover .swiper-button-prev,
-.entranceimg:hover .swiper-button-next {
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
   opacity: 0.65;
   transition: opacity 0.2s ease; /* 添加过渡效果 */
 }
 
 /* 鼠标悬停在按钮上时透明度变为 1 */
-.entranceimg .swiper-button-prev:hover,
-.entranceimg .swiper-button-next:hover {
+.swiper .swiper-button-prev:hover,
+.swiper .swiper-button-next:hover {
   opacity: 1;
   transition: opacity 0.2s ease; /* 添加过渡效果 */
 }
@@ -440,18 +415,22 @@ html, body {
   margin-right: 12px;
   border-radius: 4px;
   transition: 0.2s;
+  
 }
 
+/*
 .change-language:hover {
   background-color: #f0f0f0;
   transition: 0.2s;
 }
+*/
 
 .change-language-font{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bolder;
   color:rgba(1, 11, 31, 0.9);
   transition :color 1s ease; /* 过渡颜色变化，持续0.5秒，使用ease函数 */
+  font-family: var(--custom-font-family);
 }
 
 .translate {
@@ -473,28 +452,52 @@ html, body {
 }
 
 
-
-
+/* —————————— swiper < 720 —————————— */
 
 
 .entrancebox {
+  position: relative;
   top: 64px;
-  height: calc(100dvh - 64px);
+  height: calc(100vh - 64px);
   width: 100vw;
   overflow: hidden;
-  position: absolute;
-  transition: width 0.4s ease; /* 调整过渡时间 */
+  display: flex;
+  transition: width 0.3s ease;
+}
+
+.swiper {
+  width: calc(100% - 40px); /* 100%减去左右40px的边距 */
+  height: calc(100% - 24px); /* 100%减去上下40px的边距 */
+  margin: 0px 20px 24px 20px;
+  border-radius: 24px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持图片比例，并裁剪填充 */
+  
 }
 
 
-.entranceimg {
-  top: 0px;
-  left: 20px;
-  right: 20px;
-  bottom: 24px;
-  will-change: transform;
-  transition: width 0.4s ease;
-}
+/* 添加模糊效果的 CSS 样式 */
+.swiper-slide.blur {
+  filter: blur(0px); /* 您可以根据需要调整模糊程度 */
+  transition: filter 0s ease;
+  }
+  
+  
+  /* 添加清晰效果的 CSS 样式 */
+  .swiper-slide.unblur {
+  filter: none;
+  transition: filter 0.5s ease;
+  }
+  
 
 
 /* 侧边栏 */
@@ -506,7 +509,7 @@ html, body {
   right: -60vh; /* 初始时隐藏在右侧 */
   width: 60vw;
   height: calc(100dvh - 64px);
-  transition: right 0.4s ease; /* 统一为 0.5s */
+  transition: right 0.3s ease;
 }
 
 #toggleButton {
@@ -515,7 +518,7 @@ html, body {
 }
 
 .sidebar-open {
-  transition: width 0.4s ease;/* 添加过渡效果 */
+  transition: width 0.3s ease;/* 添加过渡效果 */
 }
 
 .sidebar-open #sidebar {
@@ -529,6 +532,23 @@ width: 40vw;
 .entrancebox.sidebar-open #sidebar {
 display: block; /* 在侧边栏打开时显示侧边栏 */
 }
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 16px !important;
+  text-align: center;
+  width: 100%;
+}
+
+
 
 /* ———————————————— 侧边栏列表 ———————————————— */
 
@@ -556,9 +576,9 @@ fill: rgba(1, 11, 31, 0.9);
 .ad-text {
 color: rgba(1, 11, 31, 0.9); /* 你的文字颜色 */
 font-size: 16px;
-font-weight: 500;
+font-weight: 600;
 font-family: var(--custom-font-family);
-margin-left: 12px;
+margin-left: 6px;
 }
 
 /* ———————————————— 侧边栏信息 ———————————————— */
@@ -581,11 +601,12 @@ align-items: center;
 
 .gd-info-a {
 width: calc(100% - 40px);
+height:100%;
 display: flex;
 flex-direction: column;
 align-items: center;
 padding: 16px;
-margin-top: 35%; /* 尝试添加这行 */
+margin-top: 50%; /* 尝试添加这行 */
 }
 
 @keyframes rotate {
@@ -605,24 +626,25 @@ display: flex;
 align-items: center; 
 justify-content: center;
 margin-bottom: 8px;
-opacity: 0.35;
+opacity: 0.20;
 animation: rotate 6s linear infinite; /* 2s 表示旋转一周的时间，linear 表示匀速，infinite 表示无限次循环 */
 }
 
 
 .gd-info-a p {
 font-family: var(--custom-font-family);
-margin: 8px 0 0 0;
+margin: 6px 0 0 0;
 text-align: center;
-font-size: 15px;
+font-size: 14px;
+font-weight: 400;
 line-height: 1.5;
 color: rgba(1, 11, 31, 0.65);
 }
 
 .gd-info-a h2 {
 font-family: var(--custom-font-family);
-font-size: 20px;
-margin: 8px 0 0 0;
+font-size: 18px;
+margin: 12px 0 0 0;
 }
 
 .gd-info-b {
@@ -729,44 +751,6 @@ color: #fff;
 .cb2-icon {
 transition: top 0.3s;
 }
-
-/* —————————— swiper < 720 —————————— */
-
-.swiper-button-prev {
-  left: 10px;
-}
-
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-pagination {
-  position: absolute;
-  bottom: 16px !important;
-  text-align: center;
-  width: 100%;
-}
-
-.swiper {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  display: block;
-}
-
-/* 添加模糊效果的 CSS 样式 */
-.image__wrapper.blur {
-filter: blur(20px); /* 您可以根据需要调整模糊程度 */
-transition: filter 0.5s ease;
-}
-
-
-/* 添加清晰效果的 CSS 样式 */
-.image__wrapper.unblur {
-filter: none;
-transition: filter 0.5s ease;
-}
-
 
 /* ———————————————————————————————————————— */
 
