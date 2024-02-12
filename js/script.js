@@ -1,5 +1,9 @@
 // script.js
 
+const stylesheet = document.createElement('link');
+stylesheet.rel = 'stylesheet';
+stylesheet.href = `styles.css?v=${Math.random()}`;
+document.head.appendChild(stylesheet);
 
 
 // 防抖函数实现
