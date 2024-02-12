@@ -117,7 +117,7 @@ function changeLanguage() {
     'EN': {
       'welcome': '欢迎访问',
       'siteInProgressTitle': '站点正在搭建中',
-      'siteInProgressText': '点击下方按钮,让我知道你正在关注该页面的搭建进度，我将在一切准备就绪后邀请你再次访问',
+      'siteInProgressText': '点击下方按钮，让我知道你正在关注该页面的搭建进度，我将在一切准备就绪后邀请你再次访问',
       'contact': '与我联系'
       // 添加其他需要翻译的文本...
     },
