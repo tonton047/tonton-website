@@ -1,4 +1,5 @@
 body{
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   
@@ -646,29 +647,30 @@ margin-left: 6px;
 /* ———————————————— 侧边栏信息 ———————————————— */
 
 .gd-info{
+overflow: hidden;
 margin-right: 20px;
 height: calc(100% - 88px); /* 适应屏幕高度，减去 gd-address 的高度和间距 */
 }
 
 .gd-info-chill {
-width: 100%;
-background-color: rgba(1, 11, 31, 0.04);
+display: flex;
 border-radius: 24px;
 height: 100%;
-display: flex;
+width: 100%;
+background-color: rgba(1, 11, 31, 0.04);
 flex-direction: column;
 justify-content: space-between; /* 使用这个属性 */
 align-items: center;
 }
 
 .gd-info-a {
+display: flex;
 width: calc(100% - 40px);
 height:100%;
-display: flex;
 flex-direction: column;
 align-items: center;
 padding: 16px;
-margin-top: 50%; /* 尝试添加这行 */
+justify-content: center;
 }
 
 @keyframes rotate {
@@ -682,8 +684,8 @@ to {
 
 
 .svg-container{
-width: 25vw;
-height: 25vw;
+width: 16vh;
+height: 16vh;
 display: flex; 
 align-items: center; 
 justify-content: center;
@@ -692,6 +694,11 @@ opacity: 0.20;
 animation: rotate 6s linear infinite; /* 2s 表示旋转一周的时间，linear 表示匀速，infinite 表示无限次循环 */
 }
 
+.gd-info-b {
+  width: calc(100% - 40px);
+  text-align: center;
+  margin-bottom: 20px;
+  }
 
 .gd-info-a p {
 font-family: var(--custom-font-family);
@@ -709,11 +716,6 @@ font-size: 18px;
 margin: 12px 0 0 0;
 }
 
-.gd-info-b {
-width: calc(100% - 40px);
-text-align: center;
-margin-bottom: 20px;
-}
 
 /* contact button */
 
