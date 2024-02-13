@@ -76,7 +76,7 @@ handleResizeDebounced();
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const entranceBox = document.querySelector('.entrancebox');
-  const imageWrappers = document.querySelectorAll('.swiper-slide');
+  const imageWrappers = document.querySelectorAll('.slide-overlay');
 
   sidebar.classList.toggle('sidebar-open');
   entranceBox.classList.toggle('sidebar-open');

@@ -466,6 +466,7 @@ html, body {
 }
 
 .swiper {
+  position: relative;
   width: calc(100% - 40px); /* 100%减去左右40px的边距 */
   height: calc(100% - 24px); /* 100%减去上下40px的边距 */
   margin: 0px 20px 24px 20px;
@@ -481,22 +482,34 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover; /* 保持图片比例，并裁剪填充 */
-  
+  border-radius: 24px;
 }
 
 
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  transition:0.3s ease; /* 添加过渡属性到 .slide-overlay */
+}
+
 /* 添加模糊效果的 CSS 样式 */
-.swiper-slide.blur {
-  filter: blur(20px); /* 您可以根据需要调整模糊程度 */
-  transition: filter 0.3s ease;
-  }
-  
-  
-  /* 添加清晰效果的 CSS 样式 */
-  .swiper-slide.unblur {
-  filter: none;
-  transition: filter 0.3s ease;
-  }
+.slide-overlay.blur {
+  background-color: rgba(255,255,255,0.35);
+  backdrop-filter: blur(72px);
+  -webkit-backdrop-filter: blur(72px);
+}
+
+/* 添加清晰效果的 CSS 样式 */
+.slide-overlay.unblur {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 
 
 /* —————————— 箭头 —————————— */
@@ -608,7 +621,7 @@ height:auto;
 }
 
 .gd-address {
-background-color: rgba(1, 11, 31, 0.06);
+background-color: rgba(1, 11, 31, 0.04);
 border-radius: 24px;
 height: 48px;
 padding: 0 24px;
@@ -639,7 +652,7 @@ height: calc(100% - 88px); /* 适应屏幕高度，减去 gd-address 的高度�
 
 .gd-info-chill {
 width: 100%;
-background-color: rgba(1, 11, 31, 0.06);
+background-color: rgba(1, 11, 31, 0.04);
 border-radius: 24px;
 height: 100%;
 display: flex;
