@@ -322,7 +322,7 @@ display: none;
 }
 
 
-/* 箭头 */
+/* —————————— 箭头 —————————— */
 
 /* 鼠标进入 .entranceimg 区域时显示按钮 */
 .swiper:hover .swiper-button-prev,
@@ -487,16 +487,65 @@ html, body {
 
 /* 添加模糊效果的 CSS 样式 */
 .swiper-slide.blur {
-  filter: blur(0px); /* 您可以根据需要调整模糊程度 */
-  transition: filter 0s ease;
+  filter: blur(20px); /* 您可以根据需要调整模糊程度 */
+  transition: filter 0.3s ease;
   }
   
   
   /* 添加清晰效果的 CSS 样式 */
   .swiper-slide.unblur {
   filter: none;
-  transition: filter 0.5s ease;
+  transition: filter 0.3s ease;
   }
+
+
+/* —————————— 箭头 —————————— */
+
+/* 鼠标进入 .entranceimg 区域时显示按钮 */
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  opacity: 0.65;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+/* 鼠标悬停在按钮上时透明度变为 1 */
+.swiper .swiper-button-prev:hover,
+.swiper .swiper-button-next:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+
+.swiper-button-prev {
+  left: 24px;
+}
+
+.swiper-button-next {
+  right: 24px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+/* 箭头图标 */
+.swipericon1 {
+  opacity: 0;
+}
+
+  
   
 
 

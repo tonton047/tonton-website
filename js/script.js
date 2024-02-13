@@ -1,11 +1,5 @@
 // script.js
 
-const stylesheet = document.createElement('link');
-stylesheet.rel = 'stylesheet';
-stylesheet.href = `styles.css?v=${Math.random()}`;
-document.head.appendChild(stylesheet);
-
-
 // 防抖函数实现
 function debounce(func, wait) {
   let timeout;
@@ -58,13 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
       },
 
     speed:400,
-
-
     slidesPerView: 1,
+     spaceBetween: 16,
 
-    spaceBetween: 0,
-
-    loopAddBlankSlides:true,
+     loopAddBlankSlides: false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
