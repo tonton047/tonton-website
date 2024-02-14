@@ -278,7 +278,7 @@ display: none;
 }
 
 #sidebar {
-  display: flex;
+  display: none;
   position: relative;
   top: 64px;
   right: -60vw; /* 初始时隐藏在右侧 */
@@ -577,7 +577,7 @@ html, body {
 
 #sidebar {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 64px;
   right: -60vw; /* 初始时隐藏在右侧 */
   width: 60vw;
