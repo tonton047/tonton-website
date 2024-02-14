@@ -277,6 +277,16 @@ display: none;
   display: flex;
 }
 
+#sidebar {
+  display: flex;
+  position: relative;
+  top: 64px;
+  right: -60vw; /* 初始时隐藏在右侧 */
+  width: 60vw;
+  height: calc(100vh - 72px);
+  transition: right 0.3s ease;
+}
+
 .swiper {
   width: calc(100% - 80px); /* 100%减去左右40px的边距 */
   height: calc(100% - 46px); /* 100%减去上下40px的边距 */
@@ -566,10 +576,10 @@ html, body {
 /* 侧边栏 */
 
 #sidebar {
-  display: block;
-  position: fixed;
+  display: flex;
+  position: absolute;
   top: 64px;
-  right: -60vh; /* 初始时隐藏在右侧 */
+  right: -60vw; /* 初始时隐藏在右侧 */
   width: 60vw;
   height: calc(100dvh - 64px);
   transition: right 0.3s ease;
@@ -616,12 +626,18 @@ display: block; /* 在侧边栏打开时显示侧边栏 */
 /* ———————————————— 侧边栏列表 ———————————————— */
 
 .guidance {
+position: relative;
+display: flex;
+flex-direction: column;
 margin-right: 20px;
-height:auto;
+height:calc(100% - 24px);
+margin-bottom: 24px;
+
 /* 你的 guidance 样式 */
 }
 
 .gd-address {
+position: relative;
 background-color: rgba(1, 11, 31, 0.04);
 border-radius: 24px;
 height: 48px;
@@ -648,8 +664,8 @@ margin-left: 6px;
 
 .gd-info{
 overflow: hidden;
-margin-right: 20px;
-height: calc(100% - 88px); /* 适应屏幕高度，减去 gd-address 的高度和间距 */
+height: 100%; /* 适应屏幕高度，减去 gd-address 的高度和间距 */
+position: relative;
 }
 
 .gd-info-chill {

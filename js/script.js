@@ -80,8 +80,8 @@ function toggleSidebar() {
 
   sidebar.classList.toggle('sidebar-open');
   entranceBox.classList.toggle('sidebar-open');
-  sidebar.style.right = sidebar.style.right === '0px' ? '-60vh' : '0';
-  entranceBox.style.marginRight = entranceBox.classList.contains('sidebar-open') ? '60vh' : '0';
+  sidebar.style.right = sidebar.style.right === '0px' ? '-60vw' : '0';
+  entranceBox.style.marginRight = entranceBox.classList.contains('sidebar-open') ? '60vw' : '0';
   imageWrappers.forEach(wrapper => {
     // 检查是否已经应用了模糊效果
     const isBlurred = wrapper.classList.contains('blur');
