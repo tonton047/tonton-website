@@ -75,22 +75,45 @@ handleResizeDebounced();
 
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
-  const entranceBox = document.querySelector('.entrancebox');
+  const entranceBoxes = document.querySelectorAll('.entrancebox');
   const imageWrappers = document.querySelectorAll('.slide-overlay');
+  const navButtonContainer = document.querySelector('.nav-button-container');
 
+  // 切换 sidebar 的类
   sidebar.classList.toggle('sidebar-open');
-  entranceBox.classList.toggle('sidebar-open');
-  sidebar.style.right = sidebar.style.right === '0px' ? '-60vw' : '0';
-  entranceBox.style.marginRight = entranceBox.classList.contains('sidebar-open') ? '60vw' : '0';
-  imageWrappers.forEach(wrapper => {
-    // 检查是否已经应用了模糊效果
-    const isBlurred = wrapper.classList.contains('blur');
+  // 遍历所有 entrancebox 元素
+  entranceBoxes.forEach(entranceBox => {
+    // 切换 entrancebox 的类
+    entranceBox.classList.toggle('sidebar-open');
+  });
 
-    // 根据当前状态切换模糊效果
+  // 设置 sidebar 和 entrancebox 的样式
+  const isSidebarOpen = sidebar.classList.contains('sidebar-open');
+  sidebar.style.right = isSidebarOpen ? '0' : '-60vw';
+
+  entranceBoxes.forEach(entranceBox => {
+    entranceBox.style.marginRight = isSidebarOpen ? '60vw' : '0';
+  });
+
+  // 切换模糊效果
+  imageWrappers.forEach(wrapper => {
+    const isBlurred = wrapper.classList.contains('blur');
     wrapper.classList.toggle('blur', !isBlurred);
     wrapper.classList.toggle('unblur', isBlurred);
   });
+
+  // 隐藏或显示 nav-button-container，并添加过渡效果
+  if (navButtonContainer) {
+    navButtonContainer.style.opacity = isSidebarOpen ? '0' : '1';
+    navButtonContainer.style.visibility = isSidebarOpen ? 'hidden' : 'visible';
+  }
 }
+
+
+
+
+
+
 
 /* menu-icon 动效 */
 function toggleIcon() {
@@ -142,6 +165,23 @@ function changeLanguage() {
 
   // 切换切换语言按钮的文本
   document.querySelector('.change-language-font').innerText = targetLanguage;
+}
+
+
+/* —————————— navigation bar —————————— */
+
+function showTab(tabId) {
+  // 隐藏所有选项卡
+  var tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach(function(tab) {
+    tab.classList.remove('active');
+  });
+
+  // 显示所选选项卡
+  var selectedTab = document.getElementById(tabId);
+  if (selectedTab) {
+    selectedTab.classList.add('active');
+  }
 }
 
 

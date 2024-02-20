@@ -31,6 +31,7 @@ backdrop-filter: blur(20px);
 -webkit-backdrop-filter:blur(20px)
 }
 
+
 .headerbox {
   z-index: 999;
   display: flex;
@@ -81,7 +82,7 @@ backdrop-filter: blur(20px);
 
 /* —————————— Contact button —————————— */
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
 .cb1 {
   display: none;
 }
@@ -304,6 +305,7 @@ display: none;
   width: 100%;
   height: 100%;
   object-fit: cover; /* 保持图片比例，并裁剪填充 */
+  border-radius: 24px;
   
 }
 
@@ -386,13 +388,153 @@ display:none;
 }
 
 
+/* —————————— navigation bar —————————— */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* —————————— navigation button —————————— */
+
+.nav-button-container {
+  position: fixed;
+  top: 12px;
+  left: 50%; /* 使用 left 和负的 margin-left 来实现水平居中 */
+  transform: translateX(-50%); /* 通过 transform 来调整水平位置 */
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* 添加其他样式属性 */
+}
+
+.nav-button-container.hidden {
+  /* 隐藏状态 */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav-button-tabs {
+  display: flex;
+  position: relative;
+  background-color: rgba(1, 11, 31, 0.05);
+  padding: 4px;
+  border-radius: 99px;
+  backdrop-filter: blur(72px);
+  -webkit-backdrop-filter: blur(72px);
+}
+
+.nav-button-tabs * {
+  z-index: 2;
+}
+
+.nav-button-container input[type="radio"] {
+  display: none;
+}
+
+.nav-button-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 120px;
+  font-size:16px;
+  font-family: var(--custom-font-family);
+  color: rgba(1, 11, 31, 0.5);
+  font-weight: 500;
+  user-select: none;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+
+.nav-button-container input[type="radio"]:checked + label {
+  color: rgba(1, 11, 31, 0.8);
+  font-weight: 600;
+}
+
+
+.nav-button-container input[id="radio-1"]:checked ~ .nav-button-glider {
+  transform: translateX(0);
+}
+
+.nav-button-container input[id="radio-2"]:checked ~ .nav-button-glider {
+  transform: translateX(100%);
+}
+
+.nav-button-container input[id="radio-3"]:checked ~ .nav-button-glider {
+  transform: translateX(200%);
+}
+
+.nav-button-glider {
+  position: absolute;
+  display: flex;
+  height: 44px;
+  width: 120px;
+  background-color: #ffffff;
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+@media (max-width: 900px) {
+  
+  .nav-button-container {
+    position: fixed;
+    top: auto; /* 取消之前的 top 样式 */
+    bottom: 48px;
+    left: 50%; /* 使用 left 和负的 margin-left 来实现水平居中 */
+    transform: translateX(-50%); /* 通过 transform 来调整水平位置 */
+    z-index: 999;
+    /* 添加其他样式属性 */
+  }
+
+  .nav-button-tab {
+    color: rgba(255, 255, 255, 0.5);
+    height: 40px;
+    width: 96px;
+}
+
+.nav-button-glider {
+  height: 40px;
+  width: 96px;
+}
+}
+
+
+
+/* —————————— page Area —————————— */
+
+.area-b{
+  width: calc(100% - 80px); /* 100%减去左右40px的边距 */
+  height: calc(100% - 46px); /* 100%减去上下40px的边距 */
+  margin: 6px 40px 40px 40px;
+  border-radius: 24px;
+  display: block;
+  background-color: aqua;
+  }
+
+
+  .area-c{
+    width: calc(100% - 80px); /* 100%减去左右40px的边距 */
+    height: calc(100% - 46px); /* 100%减去上下40px的边距 */
+    margin: 6px 40px 40px 40px;
+    border-radius: 24px;
+    display: block;
+    background-color: rgb(255, 0, 55);
+    }
+
 /* ——————————————————————————————————————————————————————————————————————————————— */
 
 
 
 
-/* ————————————————————————————— 屏幕宽度小于720px ————————————————————————————————— */
-@media screen and (max-width: 720px) {
+/* ————————————————————————————— 屏幕宽度小于900px ————————————————————————————————— */
+@media screen and (max-width: 900px) {
 html, body {
   height: 100%;
   margin: 0;
@@ -465,6 +607,9 @@ html, body {
 
 /* —————————— swiper < 720 —————————— */
 
+/* —————————— page Area —————————— */
+
+/* ——————————  Area A  —————————— */
 
 .entrancebox {
   position: relative;
@@ -569,7 +714,29 @@ html, body {
   opacity: 0;
 }
 
-  
+/* ——————————  Area B  —————————— */
+
+.area-b{
+  width: calc(100% - 40px); /* 100%减去左右40px的边距 */
+  height: calc(100% - 24px); /* 100%减去上下40px的边距 */
+  margin: 0px 20px 24px 20px;
+  border-radius: 24px;
+  display: block;
+  overflow: hidden;
+  }
+
+  /* ——————————  Area C  —————————— */
+
+  .area-c{
+    width: calc(100% - 40px); /* 100%减去左右40px的边距 */
+    height: calc(100% - 24px); /* 100%减去上下40px的边距 */
+    margin: 0px 20px 24px 20px;
+    border-radius: 24px;
+    display: block;
+    overflow: hidden;
+  }
+
+
   
 
 
@@ -616,7 +783,7 @@ display: block; /* 在侧边栏打开时显示侧边栏 */
 
 .swiper-pagination {
   position: absolute;
-  bottom: 16px !important;
+  top:14px !important;
   text-align: center;
   width: 100%;
 }
