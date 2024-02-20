@@ -82,7 +82,7 @@ backdrop-filter: blur(20px);
 
 /* —————————— Contact button —————————— */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 720px) {
 .cb1 {
   display: none;
 }
@@ -401,7 +401,7 @@ display:none;
 
 .nav-button-container {
   position: fixed;
-  top: 12px;
+  top: 14px;
   left: 50%; /* 使用 left 和负的 margin-left 来实现水平居中 */
   transform: translateX(-50%); /* 通过 transform 来调整水平位置 */
   z-index: 999;
@@ -439,12 +439,12 @@ display:none;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
-  width: 120px;
+  height: 40px;
+  width: 96px;
   font-size:16px;
   font-family: var(--custom-font-family);
   color: rgba(1, 11, 31, 0.5);
-  font-weight: 500;
+  font-weight: 600;
   user-select: none;
   border-radius: 99px;
   cursor: pointer;
@@ -473,15 +473,15 @@ display:none;
 .nav-button-glider {
   position: absolute;
   display: flex;
-  height: 44px;
-  width: 120px;
+  height: 40px;
+  width: 96px;
   background-color: #ffffff;
   z-index: 1;
   border-radius: 99px;
   transition: 0.25s ease-out;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 720px) {
   
   .nav-button-container {
     position: fixed;
@@ -533,8 +533,8 @@ display:none;
 
 
 
-/* ————————————————————————————— 屏幕宽度小于900px ————————————————————————————————— */
-@media screen and (max-width: 900px) {
+/* ————————————————————————————— 屏幕宽度小于720px ————————————————————————————————— */
+@media screen and (max-width: 720px) {
 html, body {
   height: 100%;
   margin: 0;
