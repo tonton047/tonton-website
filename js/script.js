@@ -78,6 +78,7 @@ function toggleSidebar() {
   const entranceBoxes = document.querySelectorAll('.entrancebox');
   const imageWrappers = document.querySelectorAll('.slide-overlay');
   const navButtonContainer = document.querySelector('.nav-button-container');
+  const swiperPagination = document.querySelector('.swiper-pagination');
 
   // 切换 sidebar 的类
   sidebar.classList.toggle('sidebar-open');
@@ -107,6 +108,12 @@ function toggleSidebar() {
     navButtonContainer.style.opacity = isSidebarOpen ? '0' : '1';
     navButtonContainer.style.visibility = isSidebarOpen ? 'hidden' : 'visible';
   }
+
+  // 切换 swiper-pagination 的可见性
+  if (swiperPagination) {
+    swiperPagination.style.visibility = isSidebarOpen ? 'hidden' : 'visible';
+  }
+  
 }
 
 

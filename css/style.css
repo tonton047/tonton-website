@@ -314,6 +314,7 @@ display: none;
 .swiper-pagination {
   position: absolute;
   bottom: 24px !important;
+  top: auto;
   text-align: center;
   width: 100%;
 }
@@ -486,7 +487,7 @@ display:none;
   .nav-button-container {
     position: fixed;
     top: auto; /* 取消之前的 top 样式 */
-    bottom: 48px;
+    bottom: 44px;
     left: 50%; /* 使用 left 和负的 margin-left 来实现水平居中 */
     transform: translateX(-50%); /* 通过 transform 来调整水平位置 */
     z-index: 999;
@@ -783,7 +784,7 @@ display: block; /* 在侧边栏打开时显示侧边栏 */
 
 .swiper-pagination {
   position: absolute;
-  top:14px !important;
+  bottom: 80px !important;
   text-align: center;
   width: 100%;
 }
@@ -867,8 +868,8 @@ to {
 
 
 .svg-container{
-width: 16vh;
-height: 16vh;
+width: 15vh;
+height: 15vh;
 display: flex; 
 align-items: center; 
 justify-content: center;
