@@ -5,14 +5,24 @@ body{
   
 }
 
+@media screen and (max-width: 720px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  } 
+}
+
 :root {
   --custom-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --header-h-web:72px;
   --header-h-h5:60px;
-
-
+/* -------------------- font size -------------------- */
+--h1-web:72px;
+--h1-h5:36px;
+--subtittle-web:24px;
+--subtittle-h5:20px;
 }
-
 
 * {
   -webkit-tap-highlight-color: transparent;
@@ -20,6 +30,7 @@ body{
   outline: none;
 }
 
+/* -------------------- Header -------------------- */
 
 .header {
 position: fixed;
@@ -27,7 +38,7 @@ height: 72px;
 top: 0;
 left: 0;
 width: 100%;
-z-index: 999;
+z-index: 997;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -70,7 +81,31 @@ backdrop-filter: blur(20px);
   /* 其他样式属性 */
 }
 
-/* —————————— badge —————————— */
+@media screen and (max-width: 720px) {
+
+.header {
+    height: var(--header-h-h5);
+}
+  
+   
+.headerbox {
+  margin: auto 20px;
+}
+
+.header-selection{
+  width: auto;
+  position:relative;
+}
+
+.brandinglogo-svg {
+  width: auto;
+  height: 28px;
+  margin-right: auto;
+}
+
+}
+
+/* -------------------- badge -------------------- */
 
 .badge-beta{
  margin-top: 6px;
@@ -101,7 +136,7 @@ backdrop-filter: blur(20px);
 
 
 
-/* —————————— Contact button —————————— */
+/* -------------------- Contact button -------------------- */
 
 @media screen and (max-width: 720px) {
 .cb1 {
@@ -209,6 +244,108 @@ transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, 
   transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, ease-out, ease-in-out */
 }
 
+@media screen and (max-width: 720px) {
+
+  .cb2 {
+    height: 48px;
+    background-color: #000000;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--custom-font-family);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 0 0 0px #000000;
+    }
+    
+    .cb2-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--custom-font-family);
+    color: #fff;
+    }
+    
+    .cb2::before {
+    position: absolute;
+    font-size: 0.9rem;
+    color: #111;
+    border-radius: .25em;
+    }
+    
+    .cb2::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    left: calc(50% - 10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    }
+    
+    .cb2:hover {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px #000000;
+    }
+    
+    .cb2:hover .cb2-text {
+    top: -100%;
+    transition-timing-function: ease;
+    }
+    
+    .cb2:hover .cb2-icon {
+    top: 0;
+    transition-timing-function: ease;
+    }
+    
+    .cb2:hover::before,
+    .cb2:hover::after {
+    opacity: 1;
+    visibility: visible;
+    }
+    
+    .cb2:active {
+    transform: scale(0.9);
+    transition-timing-function: ease;
+    }
+    
+    .cb2-icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .cb2-icon svg {
+    width: 24px;
+    height: 24px;
+    }
+    
+    .cb2-wrapper,
+    .cb2-text,
+    .cb2-icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+    }
+    
+    .cb2-text,
+    .cb2-icon {
+    transition: top 0.3s;
+    }
+
+}
+
+
 
 /* 侧边栏 */
 /*————————————————————————————————————————————*/  
@@ -221,8 +358,8 @@ transition-timing-function: ease; /* 你可以选择其他值，比如 ease-in, 
  display: none;
 }
 
-/* 菜单按钮 */
-/*————————————————————————————————————————————*/
+
+/* -------------------- 菜单按钮 -------------------- */
 .menu-button{
 display: none;
 }
@@ -236,6 +373,7 @@ display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .ml-container {
@@ -286,9 +424,9 @@ display: none;
   transform: rotate(-45deg);
 }
 
-/* —————————— Swiper —————————— */
 
-/* 首页展示图 */
+
+/* -------------------- 首页展示图 -------------------- */
 
 .entrancebox {
   position: relative;
@@ -298,6 +436,38 @@ display: none;
   overflow: hidden;
   display: flex;
 }
+
+@media screen and (max-width: 720px) {
+  .entrancebox {
+    position: relative;
+    top: 60px;
+    height: calc(100dvh - 60px);
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    transition: width 0.3s ease;
+  }
+  }
+
+
+
+.area-warpper{
+position: relative;
+display: block;
+width: 100%;
+height: 100%;
+}
+
+.area-warpper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持图片比例，并裁剪填充 */
+  border-radius: 24px;
+  
+}
+
+
 
 #sidebar {
   display: none;
@@ -309,12 +479,16 @@ display: none;
   transition: right 0.3s ease;
 }
 
+
+/* -------------------- Swiper -------------------- */
+
 .swiper {
   width: calc(100% - 80px); /* 100%减去左右40px的边距 */
   height: calc(100% - 46px); /* 100%减去上下40px的边距 */
   margin: 6px 40px 40px 40px;
   border-radius: 24px;
 }
+
 
 .swiper-slide {
   background-position: center;
@@ -330,7 +504,199 @@ display: none;
   
 }
 
-/* 分页器 */
+@media screen and (max-width: 720px) {
+  .swiper {
+    position: relative;
+    width: calc(100% - 40px); /* 100%减去左右40px的边距 */
+    height: calc(100% - 24px); /* 100%减去上下40px的边距 */
+    margin: 0px 20px 24px 20px;
+    border-radius: 24px;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持图片比例，并裁剪填充 */
+    border-radius: 24px;
+  }
+  
+  
+  .slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    pointer-events: none;
+    transition:0.3s ease; /* 添加过渡属性到 .slide-overlay */
+  }
+  
+  /* 添加模糊效果的 CSS 样式 */
+  .slide-overlay.blur {
+    background-color: rgba(255,255,255,0.35);
+    backdrop-filter: blur(72px);
+    -webkit-backdrop-filter: blur(72px);
+  }
+  
+  /* 添加清晰效果的 CSS 样式 */
+  .slide-overlay.unblur {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  }
+
+  /* -------------------- 轮播图文字 -------------------- */
+
+.swiper-text-content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index:998;
+  user-select: none;
+  pointer-events: none;
+  
+}
+
+.swiper-text-tittle{
+    margin: 0;
+    margin-bottom: 2px;
+    opacity: 0;
+    transform: translateY(120px);
+    transition:all 0.5s ease;
+}
+
+
+.swiper-text-subtittle{
+  margin: 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:all 0.5s ease;
+}
+
+.swiper-slide-active .swiper-text-tittle,
+.swiper-slide-active .swiper-text-subtittle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.swiper-slide-active .swiper-text-tittle {
+  transition-delay: 0.1s; /* Add a delay to the price transition */
+}
+
+.swiper-slide-active .swiper-text-subtittle {
+  transition-delay: 0.3s; /* Add a delay to the price transition */
+}
+
+
+
+.swiper-text-tittle-normal{
+  margin: 0;
+  margin-bottom: 2px;
+  opacity: 1;
+}
+
+.swiper-text-subtittle-nomal{
+  margin: 0;
+  opacity: 1;
+}
+
+@media screen and (max-width: 720px)  {
+ .swiper-text-subtittle-nomal{
+    margin: 0;
+    margin-bottom: 10%;
+    opacity: 1;
+  }
+
+}
+
+
+/* ------------------ tittle style ------------------ */
+
+.swiper-tittle-style-1{
+  font-weight: 600;
+  font-size: var(--h1-web);
+  line-height: 1.3;
+  text-align: center;
+  font-family:serif; 
+}
+
+.swiper-tittle-style-2{
+  font-weight: 600;
+  font-size: var(--h1-web);
+  line-height: 1.3;
+  text-align: center;
+  font-family:var(--custom-font-family); 
+}
+
+.swiper-subtittle-style-1{
+  font-weight: 600;
+  font-size: var(--subtittle-web);
+  line-height: 1.2em;
+  letter-spacing: 2px;
+  font-family:serif; 
+  text-align: center;
+}
+
+.swiper-subtittle-style-2{
+  font-weight: 600;
+  font-size: var(--subtittle-web);
+  line-height: 1.2em;
+  letter-spacing: 2px;
+  font-family:var(--custom-font-family); 
+  text-align: center;
+}
+
+@media screen and (max-width: 720px)  {
+
+  .swiper-tittle-style-1{
+    font-weight: 600;
+    font-size: var(--h1-h5);
+    line-height: 1.3;
+    text-align: center;
+    font-family:serif; 
+  }
+  
+  .swiper-tittle-style-2{
+    font-weight: 600;
+    font-size: var(--h1-h5);
+    line-height: 1.3;
+    text-align: center;
+    font-family:var(--custom-font-family); 
+  }
+  
+  .swiper-subtittle-style-1{
+    font-weight: 600;
+    font-size: var(--subtittle-h5);
+    line-height: 1.2em;
+    letter-spacing: 2px;
+    font-family:serif; 
+    text-align: center;
+  }
+  
+  .swiper-subtittle-style-2{
+    font-weight: 600;
+    font-size: var(--subtittle-h5);
+    line-height: 1.2em;
+    letter-spacing: 2px;
+    font-family:var(--custom-font-family); 
+    text-align: center;
+  }
+  
+}
+
+
+
+/* -------------------- 分页器 ------------------- */
 
 .swiper-pagination {
   position: absolute;
@@ -357,7 +723,20 @@ display: none;
 }
 
 
-/* —————————— 箭头 —————————— */
+@media screen and (max-width: 720px) {
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: calc(100% - 36px) !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+
+
+}
+
+/* ------------------- 轮播图箭头 ------------------- */
 
 /* 鼠标进入 .entranceimg 区域时显示按钮 */
 .swiper:hover .swiper-button-prev,
@@ -366,12 +745,36 @@ display: none;
   transition: opacity 0.2s ease; /* 添加过渡效果 */
 }
 
+@media screen and (max-width: 720px) {
+
+  /* 鼠标进入 .entranceimg 区域时显示按钮 */
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  opacity: 0.65;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+}
+
 /* 鼠标悬停在按钮上时透明度变为 1 */
 .swiper .swiper-button-prev:hover,
 .swiper .swiper-button-next:hover {
   opacity: 1;
   transition: opacity 0.2s ease; /* 添加过渡效果 */
 }
+
+@media screen and (max-width: 720px) {
+
+  /* 鼠标悬停在按钮上时透明度变为 1 */
+.swiper .swiper-button-prev:hover,
+.swiper .swiper-button-next:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+}
+
+/* ------------------- 箭头基本属性 ------------------- */
 
 
 .swiper-button-prev,
@@ -384,6 +787,22 @@ display: none;
   transition: opacity 0.2s ease; /* 添加过渡效果 */
 }
 
+@media screen and (max-width: 720px) {
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.2s ease; /* 添加过渡效果 */
+}
+
+}
+
+ /* ------------------- 箭头间距------------------- */ 
+
 
 .swiper-button-prev {
   left: 24px;
@@ -393,24 +812,85 @@ display: none;
   right: 24px;
 }
 
+@media screen and (max-width: 720px) {
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  
+}
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
   display: none;
 }
+@media screen and (max-width: 720px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none;
+  }
+}
 
-/* 箭头图标 */
+/* ------------------- 箭头可见性 ------------------- */
 .swipericon1 {
   opacity: 1;
 }
 
-
-/* —————————— change - language —————————— */
-.change-language{
-display:none;
+@media screen and (max-width: 720px) {
+.swipericon1 {
+  opacity: 0;
+}
 }
 
 
-/* —————————— navigation bar —————————— */
+
+
+/* ------------------- change - language ------------------- */
+
+.change-language{
+display:none;
+user-select: none;
+}
+
+@media screen and (max-width: 720px) {
+
+  .change-language{
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+    margin-right: 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+    
+  }
+  
+  /*
+  .change-language:hover {
+    background-color: #f0f0f0;
+    transition: 0.2s;
+  }
+  */
+  
+  .change-language-font{
+    font-size: 18px;
+    font-weight: bolder;
+    color:rgba(1, 11, 31, 0.9);
+    transition :color 1s ease; /* 过渡颜色变化，持续0.5秒，使用ease函数 */
+    font-family: var(--custom-font-family);
+  }
+  
+  .translate {
+    transition: opacity 1s ease; /* 过渡透明度变化，持续0.5秒，使用ease函数 */
+  }
+  
+
+}
+
+/* ------------------- Tab area------------------- */
 .tab-content {
   display: none;
 }
@@ -419,14 +899,15 @@ display:none;
   display: block;
 }
 
-/* —————————— navigation button —————————— */
+
+/* ------------------- navigation button ------------------- */
 
 .nav-button-container {
   position: fixed;
   top: 14px;
   left: 50%; /* 使用 left 和负的 margin-left 来实现水平居中 */
   transform: translateX(-50%); /* 通过 transform 来调整水平位置 */
-  z-index: 999;
+  z-index: 998;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -442,11 +923,12 @@ display:none;
 .nav-button-tabs {
   display: flex;
   position: relative;
-  background-color: rgba(1, 11, 31, 0.05);
+  background-color: rgba(1, 11, 31, 0.06);
   padding: 4px;
   border-radius: 99px;
   backdrop-filter: blur(72px);
   -webkit-backdrop-filter: blur(72px);
+  user-select: none;
 }
 
 .nav-button-tabs * {
@@ -516,7 +998,7 @@ display:none;
   }
 
   .nav-button-tab {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     height: 40px;
     width: 96px;
 }
@@ -529,7 +1011,10 @@ display:none;
 
 
 
-/* ———————————————————— page Area ———————————————————— */
+/* ------------------- page Area------------------- */
+
+
+/* -------------------  Area B ------------------- */
 
 .area-b{
   width: calc(100% - 80px); /* 100%减去左右40px的边距 */
@@ -537,9 +1022,22 @@ display:none;
   margin: 6px 40px 40px 40px;
   border-radius: 24px;
   display: block;
+  overflow: hidden;
   background-color: aqua;
   }
 
+  @media (max-width: 720px) {
+
+    .area-b{
+      width: calc(100% - 40px); /* 100%减去左右40px的边距 */
+      height: calc(100% - 24px); /* 100%减去上下40px的边距 */
+      margin: 0px 20px 24px 20px;
+      display: block;
+      }
+
+  }
+
+/* -------------------  Area C  ------------------- */
 
   .area-c{
     width: calc(100% - 80px); /* 100%减去左右40px的边距 */
@@ -547,223 +1045,30 @@ display:none;
     margin: 6px 40px 40px 40px;
     border-radius: 24px;
     display: block;
-    background-color: rgb(255, 0, 55);
+    background-color: rgba(1, 11, 31, 0.06);
+    overflow: hidden;
     }
 
-/* ——————————————————————————————————————————————————————————————————————————————— */
+    @media (max-width: 720px) {
+
+      .area-c{
+        width: calc(100% - 40px); /* 100%减去左右40px的边距 */
+        height: calc(100% - 24px); /* 100%减去上下40px的边距 */
+        margin: 0px 20px 24px 20px;
+        border-radius: 24px;
+        display: block;
+      }
+    
+
+    }
+
+/* ---------------------------------------------------------------------------- */
 
 
 
 
-/* ————————————————————————————— 屏幕宽度小于720px ————————————————————————————————— */
+/* ----------------------------- 屏幕宽度小于720px ----------------------------- */
 @media screen and (max-width: 720px) {
-html, body {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-}
-
-.header {
- height: var(--header-h-h5);
-}
-
-.headerbox {
-  margin: auto 20px;
-}
-
-.header-selection{
-  width: auto;
-  position:relative;
-}
-
-.brandinglogo-svg {
-  width: auto;
-  height: 28px;
-  margin-right: auto;
-}
-
-/* —————————— change - language —————————— */
-.change-language{
-  cursor: pointer;
-  display: inline-block;
-  padding: 5px;
-  margin-right: 12px;
-  border-radius: 4px;
-  transition: 0.2s;
-  
-}
-
-/*
-.change-language:hover {
-  background-color: #f0f0f0;
-  transition: 0.2s;
-}
-*/
-
-.change-language-font{
-  font-size: 18px;
-  font-weight: bolder;
-  color:rgba(1, 11, 31, 0.9);
-  transition :color 1s ease; /* 过渡颜色变化，持续0.5秒，使用ease函数 */
-  font-family: var(--custom-font-family);
-}
-
-.translate {
-  transition: opacity 1s ease; /* 过渡透明度变化，持续0.5秒，使用ease函数 */
-}
-
-
-/* —————————— swiper < 720 —————————— */
-
-/* —————————— page Area —————————— */
-
-/* ——————————  Area A  —————————— */
-
-.entrancebox {
-  position: relative;
-  top: 60px;
-  height: calc(100dvh - 60px);
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  transition: width 0.3s ease;
-}
-
-.swiper {
-  position: relative;
-  width: calc(100% - 40px); /* 100%减去左右40px的边距 */
-  height: calc(100% - 24px); /* 100%减去上下40px的边距 */
-  margin: 0px 20px 24px 20px;
-  border-radius: 24px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 保持图片比例，并裁剪填充 */
-  border-radius: 24px;
-}
-
-
-.slide-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  transition:0.3s ease; /* 添加过渡属性到 .slide-overlay */
-}
-
-/* 添加模糊效果的 CSS 样式 */
-.slide-overlay.blur {
-  background-color: rgba(255,255,255,0.35);
-  backdrop-filter: blur(72px);
-  -webkit-backdrop-filter: blur(72px);
-}
-
-/* 添加清晰效果的 CSS 样式 */
-.slide-overlay.unblur {
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-
-
-/* —————————— 箭头 —————————— */
-
-/* 鼠标进入 .entranceimg 区域时显示按钮 */
-.swiper:hover .swiper-button-prev,
-.swiper:hover .swiper-button-next {
-  opacity: 0.65;
-  transition: opacity 0.2s ease; /* 添加过渡效果 */
-}
-
-/* 鼠标悬停在按钮上时透明度变为 1 */
-.swiper .swiper-button-prev:hover,
-.swiper .swiper-button-next:hover {
-  opacity: 1;
-  transition: opacity 0.2s ease; /* 添加过渡效果 */
-}
-
-
-.swiper-button-prev,
-.swiper-button-next {
-  width: 32px;
-  height: 32px;
-  color: #fff;
-  font-size: 24px;
-  opacity: 0;
-  transition: opacity 0.2s ease; /* 添加过渡效果 */
-}
-
-
-.swiper-button-prev {
-  left: 24px;
-}
-
-.swiper-button-next {
-  right: 24px;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  display: none;
-}
-
-/* 箭头图标 */
-.swipericon1 {
-  opacity: 0;
-}
-
-
-.swiper-button-prev {
-  left: 10px;
-}
-
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-pagination {
-  position: absolute;
-  bottom: calc(100% - 36px) !important;
-  text-align: center;
-  width: 100%;
-}
-
-/* ——————————  Area B  —————————— */
-
-.area-b{
-  width: calc(100% - 40px); /* 100%减去左右40px的边距 */
-  height: calc(100% - 24px); /* 100%减去上下40px的边距 */
-  margin: 0px 20px 24px 20px;
-  border-radius: 24px;
-  display: block;
-  overflow: hidden;
-  }
-
-  /* ——————————  Area C  —————————— */
-
-  .area-c{
-    width: calc(100% - 40px); /* 100%减去左右40px的边距 */
-    height: calc(100% - 24px); /* 100%减去上下40px的边距 */
-    margin: 0px 20px 24px 20px;
-    border-radius: 24px;
-    display: block;
-    overflow: hidden;
-  }
-
-
-  
-
-
 /* 侧边栏 */
 
 #sidebar {
@@ -774,6 +1079,7 @@ html, body {
   width: 60vw;
   height: calc(100dvh - 60px);
   transition: right 0.3s ease;
+  z-index: 999;
 }
 
 #toggleButton {
@@ -798,9 +1104,7 @@ display: block; /* 在侧边栏打开时显示侧边栏 */
 }
 
 
-
-
-/* ———————————————— 侧边栏列表 ———————————————— */
+/* ------------------- 侧边栏列表 ------------------- */
 
 .guidance {
 position: relative;
@@ -837,7 +1141,7 @@ font-family: var(--custom-font-family);
 margin-left: 6px;
 }
 
-/* ———————————————— 侧边栏信息 ———————————————— */
+/* ------------------- 侧边栏信息 ------------------- */
 
 .gd-info{
 overflow: hidden;
@@ -891,7 +1195,7 @@ animation: rotate 6s linear infinite; /* 2s 表示旋转一周的时间，linear
   width: calc(100% - 40px);
   text-align: center;
   margin-bottom: 20px;
-  }
+}
 
 .gd-info-a p {
 font-family: var(--custom-font-family);
@@ -909,109 +1213,128 @@ font-size: 18px;
 margin: 12px 0 0 0;
 }
 
+/* ---------------------------------------------------------------------------- */
 
-/* contact button */
-
-.cb2 {
-height: 48px;
-background-color: #000000;
-position: relative;
-text-align: center;
-font-size: 16px;
-font-weight: 500;
-font-family: var(--custom-font-family);
-border-radius: 999px;
-cursor: pointer;
-transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-box-shadow: inset 0 0 0 0px #000000;
 }
 
-.cb2-text {
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 16px;
-font-weight: 500;
-font-family: var(--custom-font-family);
-color: #fff;
+.raibow-content{
+  user-select: none;
+  width: 100%;
+  height: 100%;
 }
 
-.cb2::before {
-position: absolute;
-font-size: 0.9rem;
-color: #111;
-border-radius: .25em;
+.loader {
+	position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	top: 50%; left: 50%;
+	
+	--from: 13vh;
+	--to: 32.5vh;
+	--size: 5.2vh;
+	--time: 7s;
+	--count: 51; /* up to 100 */
+	--turns: 6;
 }
 
-.cb2::after {
-position: absolute;
-width: 0;
-height: 0;
-border: 10px solid transparent;
-left: calc(50% - 10px);
-opacity: 0;
-visibility: hidden;
-transition: all 0.3s;
+.circle {
+	position: absolute;
+  user-select: none;
+	
+	--delay: calc(var(--time) / var(--count) * -1 * var(--i));
+	rotate: calc(var(--turns) * 1turn / var(--count) * var(--i));
+	
+	animation: circle var(--time) var(--delay) ease-in-out infinite;
+}
+.circle:nth-child(n + var(--count)) {
+	display: none;
+}
+.circle::before {
+	content: '';
+	display: block;
+	width: var(--size); aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: white;
+	transform-origin: center center;
+
+	animation: circleSize var(--time) var(--delay) ease-in-out infinite;
 }
 
-.cb2:hover {
-background: transparent;
-box-shadow: inset 0 0 0 2px #000000;
+/* rainbow */
+.rainbow .circle::before {
+	background-color: hsl(
+		calc(1turn /  ( var(--count) / var(--turns) ) * var(--i)) 
+		100% 70%
+	);
 }
 
-.cb2:hover .cb2-text {
-top: -100%;
-transition-timing-function: ease;
+/* animations */
+@keyframes circle {
+	from { transform: translate(0, var(--from)); }
+	to { transform: translate(0, var(--to)); }
+}
+@keyframes circleSize {
+	0%, 100% { transform: scale(0); }
+	25%, 50% { transform: scale(1); }
 }
 
-.cb2:hover .cb2-icon {
-top: 0;
-transition-timing-function: ease;
-}
+@media screen and (max-width: 720px) {
 
-.cb2:hover::before,
-.cb2:hover::after {
-opacity: 1;
-visibility: visible;
-}
+  .raibow-content{
+    user-select: none;
+  }
+  
+  .loader {
+    top: 46%;
 
-.cb2:active {
-transform: scale(0.9);
-transition-timing-function: ease;
-}
-
-.cb2-icon {
-color: #fff;
-top: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.cb2-icon svg {
-width: 24px;
-height: 24px;
-}
-
-.cb2-wrapper,
-.cb2-text,
-.cb2-icon {
-overflow: hidden;
-position: absolute;
-width: 100%;
-height: 100%;
-left: 0;
-color: #fff;
-}
-
-.cb2-text,
-.cb2-icon {
-transition: top 0.3s;
-}
-
-/* ———————————————————————————————————————— */
-
-
-
+    --from: 16.5vw;
+    --to: 41.25vw;
+    --size: 6.6vw;
+    --time: 7s;
+    --count: 51; /* up to 100 */
+    --turns: 6;
+  }
+  
+  .circle {
+    position: absolute;
+    user-select: none;
+    
+    --delay: calc(var(--time) / var(--count) * -1 * var(--i));
+    rotate: calc(var(--turns) * 1turn / var(--count) * var(--i));
+    
+    animation: circle var(--time) var(--delay) ease-in-out infinite;
+  }
+  .circle:nth-child(n + var(--count)) {
+    display: none;
+  }
+  .circle::before {
+    content: '';
+    display: block;
+    width: var(--size); aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    transform-origin: center center;
+  
+    animation: circleSize var(--time) var(--delay) ease-in-out infinite;
+  }
+  
+  /* rainbow */
+  .rainbow .circle::before {
+    background-color: hsl(
+      calc(1turn /  ( var(--count) / var(--turns) ) * var(--i)) 
+      100% 70%
+    );
+  }
+  
+  /* animations */
+  @keyframes circle {
+    from { transform: translate(0, var(--from)); }
+    to { transform: translate(0, var(--to)); }
+  }
+  @keyframes circleSize {
+    0%, 100% { transform: scale(0); }
+    25%, 50% { transform: scale(1); }
+  }
 
 }
