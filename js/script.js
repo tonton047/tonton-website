@@ -1,5 +1,14 @@
 // script.js
 
+window.onload = function () {
+  // 在页面加载完成后调用 changeLanguage 函数
+  changeLanguage();
+
+  // 模拟点击切换语言按钮
+  document.querySelector('.change-language').click();
+};
+
+
 // 防抖函数实现
 function debounce(func, wait) {
   let timeout;
@@ -41,15 +50,19 @@ function openEmailWindow() {
   } else {
     window.open(`mailto:${emailAddress}`, '_blank');
   }
+
 }
 
 /* swiper */
 document.addEventListener("DOMContentLoaded", function() {
   var swiper = new Swiper(".swiper", {
 
-      autoplay: {
-        delay: 2500,
-      },
+    autoplay: {
+      delay: 2500,
+    },
+
+    lazyLoading : true,
+    lazyLoadingInPrevNext : true,
 
     speed:400,
     slidesPerView: 1,
@@ -67,9 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
-// 初始时检查窗口宽度，以决定是否启用 mousewheel
-handleResizeDebounced();
 
 /* 侧边栏 */
 
@@ -118,10 +128,6 @@ function toggleSidebar() {
 
 
 
-
-
-
-
 /* menu-icon 动效 */
 function toggleIcon() {
   const icon = document.querySelector('.menu-icon');
@@ -131,27 +137,50 @@ function toggleIcon() {
 
 /* —————————— 切换语言 —————————— */
 function changeLanguage() {
+  console.log('Change language clicked!'); // 添加这一行
+
   // 获取所有需要切换语言的元素
   var elementsToTranslate = document.querySelectorAll('.translate');
 
   // 获取当前语言
   var currentLanguage = document.querySelector('.change-language-font').innerText;
 
-  // 定义语言对应的文本
+  // 定义语言对应的文本和字体类
   var translations = {
     'EN': {
-      'welcome': '欢迎访问',
-      'siteInProgressTitle': '站点正在搭建中',
-      'siteInProgressText': '点击下方按钮，让我知道你正在关注该页面的搭建进度，我将在一切准备就绪后邀请你再次访问',
-      'contact': '与我联系'
+      'welcome': { text: '欢迎访问', fontClass: '' },
+      'siteInProgressTitle': { text: '站点正在搭建中', fontClass: '' },
+      'siteInProgressText': { text: '点击下方按钮，让我知道你正在关注该页面的搭建进度，我将在一切准备就绪后邀请你再次访问', fontClass: '' },
+      'contact': { text: '与我联系', fontClass: '' },
+
+      'tap1': { text: '画廊', fontClass: '' },
+      'tap2': { text: '探索', fontClass: '' },
+      'tap3': { text: '活动', fontClass: '' },
+
+      'rough': { text: '山雨欲来风满楼', fontClass: 'font-style--c1' },
+      'confuse': { text: '我们<br>正在混淆<br>符号<br>与<br>真实世界', fontClass: 'font-style--c1' },
+      'matrix': { text: '矩阵', fontClass: 'font-style--c1' },
+      'structure': { text: '纲举目张', fontClass: 'font-style--c2' },
+      'hello': { text: '你好', fontClass: 'font-style--c2' },
+      'newyear2024': { text: '龙&nbsp&nbsp&nbsp&nbsp二<br>年&nbsp&nbsp&nbsp&nbsp零<br>大&nbsp&nbsp&nbsp&nbsp二<br>吉&nbsp&nbsp&nbsp&nbsp四', fontClass: 'font-style--c1' },
       // 添加其他需要翻译的文本...
     },
     'CN': {
-      // 添加其他需要翻译的文本...
-      'welcome': 'Welcome page',
-      'siteInProgressTitle': 'Site in progress',
-      'siteInProgressText': 'Click the button below to connect with me and let me know you\'re following this page. I\'ll invite you to revisit when the time is right',
-      'contact': 'Contact'
+      'welcome': { text: 'Welcome page', fontClass: '' },
+      'siteInProgressTitle': { text: 'Site in progress', fontClass: '' },
+      'siteInProgressText': { text: 'Click the button below to connect with me and let me know you\'re following this page. I\'ll invite you to revisit when the time is right', fontClass: '' },
+      'contact': { text: 'Contact', fontClass: '' },
+
+      'tap1': { text: 'Gallery', fontClass: '' },
+      'tap2': { text: 'Explore', fontClass: '' },
+      'tap3': { text: 'Events', fontClass: '' },
+
+      'rough': { text: 'Prudent', fontClass: 'font-style--e1' },
+      'confuse': { text: 'WE<br>CONFUSE<br>SIGN<br>WITH<br>THE<br>REAL<br>WORLD', fontClass: 'font-style--e1' },
+      'matrix': { text: 'Matrix', fontClass: 'font-style--e1' },
+      'structure': { text: 'Structure', fontClass: 'font-style--c2' },
+      'hello': { text: 'hello', fontClass: 'font-style--e3' },
+      'newyear2024': { text: 'Happy<br>Chinese<br>New<br>Year<br>2024', fontClass: 'font-style--e1' },
     }
   };
 
@@ -163,16 +192,30 @@ function changeLanguage() {
     // 获取元素的翻译 key
     var translationKey = element.getAttribute('data-translation-key');
 
-    // 根据语言和 key 获取翻译后的文本
-    var translatedText = translations[targetLanguage][translationKey];
+    // 根据语言和 key 获取翻译后的文本和字体类
+    var translation = translations[targetLanguage][translationKey];
+    var translatedText = translation.text;
+    var fontClass = translation.fontClass;
 
-    // 更新元素的文本内容
-    element.innerText = translatedText;
+    // 移除所有字体类
+    element.classList.remove('font-style--c1', 'font-style--e1', 'font-style--e3');
+
+    // 如果有字体类，则添加
+    if (fontClass) {
+      element.innerHTML = translatedText;
+      element.classList.add(fontClass);
+    } else {
+      // 如果没有字体类，只更新文本内容
+      element.innerHTML = translatedText;
+    }
   });
 
   // 切换切换语言按钮的文本
   document.querySelector('.change-language-font').innerText = targetLanguage;
 }
+
+// 初始时调用 changeLanguage 函数
+changeLanguage();
 
 
 /* —————————— navigation bar —————————— */
@@ -192,3 +235,12 @@ function showTab(tabId) {
 }
 
 
+/* -------------------- loading -------------------- */
+// Simulate a delay (replace this with your actual loading logic)
+setTimeout(function () {
+    // Remove the loading overlay after the delay
+    var loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+        loadingOverlay.style.display = 'none';
+    }
+}, 2000); // Adjust the delay as needed or replace it with your actual loading logic

@@ -3,14 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Borel&family=Kalnia:wdth,wght@100..125,100..700&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.css?v=0.37">
+    <link rel="stylesheet" href="css/style.css?v=0.38">
 
-    <title>tonton-website</title>
+    <title>TonTon</title>
 
 </head>
 <body>
+
+      <!-- Loading overlay -->
+      <div class="loading-overlay" id="loadingOverlay">
+
+        <div class="loading-logo-container">
+
+          <div class="box">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M21 1C21 0.447715 20.5523 0 20 0H2C1.44772 0 1 0.447715 1 1V3C1 3.55228 1.44772 4 2 4H9V15C9 15.5523 9.44772 16 10 16H12C12.5523 16 13 15.5523 13 15V4H20C20.5523 4 21 3.55228 21 3V1Z"/>
+              </svg>                       
+          </div>
+
+          <div class="box">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M17 0C19.2091 0 21 1.79086 21 4V12C21 14.2091 19.2091 16 17 16H5C2.79086 16 1 14.2091 1 12V4C1 1.79086 2.79086 0 5 0H17ZM15.6667 4H6.33334C5.59695 4 5 4.59695 5 5.33333V10.6667C5 11.403 5.59695 12 6.33334 12H15.6667C16.403 12 17 11.403 17 10.6667V5.33333C17 4.59695 16.403 4 15.6667 4Z"/>
+              </svg>                   
+          </div>
+
+          <div class="box">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 5.33333C18 4.61927 17.4387 4.03631 16.7332 4.00163L16.6667 4H6V15C6 15.5523 5.55228 16 5 16H3C2.44772 16 2 15.5523 2 15V1C2 0.447715 2.44772 0 3 0H18C20.2091 0 22 1.79086 22 4V15C22 15.5523 21.5523 16 21 16H19C18.4477 16 18 15.5523 18 15V5.33333Z"/>
+              </svg>                    
+          </div>
+
+          <div class="box">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M21 1C21 0.447715 20.5523 0 20 0H2C1.44772 0 1 0.447715 1 1V3C1 3.55228 1.44772 4 2 4H9V15C9 15.5523 9.44772 16 10 16H12C12.5523 16 13 15.5523 13 15V4H20C20.5523 4 21 3.55228 21 3V1Z"/>
+              </svg>   
+          </div>
+
+          <div class="box">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M17 0C19.2091 0 21 1.79086 21 4V12C21 14.2091 19.2091 16 17 16H5C2.79086 16 1 14.2091 1 12V4C1 1.79086 2.79086 0 5 0H17ZM15.6667 4H6.33334C5.59695 4 5 4.59695 5 5.33333V10.6667C5 11.403 5.59695 12 6.33334 12H15.6667C16.403 12 17 11.403 17 10.6667V5.33333C17 4.59695 16.403 4 15.6667 4Z"/>
+              </svg> 
+          </div>
+
+          <div class="box">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M18 5.33333C18 4.61927 17.4387 4.03631 16.7332 4.00163L16.6667 4H6V15C6 15.5523 5.55228 16 5 16H3C2.44772 16 2 15.5523 2 15V1C2 0.447715 2.44772 0 3 0H18C20.2091 0 22 1.79086 22 4V15C22 15.5523 21.5523 16 21 16H19C18.4477 16 18 15.5523 18 15V5.33333Z"/>
+              </svg>    
+          </div>
+
+
+
+        </div>
+        <div class="loading-card"></div>
+
+      </div>
+
     <header class="header">
         <div class="headerbox">
             <div class="left-section">
@@ -43,7 +97,7 @@
                            
                 <div id="contactButton" class="cb1" ontouchstart="handleTouchStart()" ontouchend="handleTouchEnd()" onclick="handleButtonClick()">
                     <div class="cb1-wrapper">
-                        <div class="cb1-text">Contact</div>
+                        <div class="cb1-text translate" data-translation-key="contact">与我联系</div>
                         <span class="cb1-icon">
                             <svg class="cb1-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4C3.34315 4 2 5.34315 2 7V17C2 18.6569 3.34315 20 5 20H19C20.6569 20 22 18.6569 22 17V7C22 5.34315 20.6569 4 19 4H5ZM4.44361 6.16895C4.60268 6.06225 4.79407 6 5 6H19C19.2718 6 19.5182 6.10842 19.6985 6.28436L12.6835 10.5198C12.3656 10.7117 11.9676 10.7117 11.6497 10.5198L4.44361 6.16895ZM4 8.23738V17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17V8.43857L13.7172 12.232C12.7636 12.8077 11.5696 12.8077 10.616 12.232L4 8.23738Z" fill="black"/>
@@ -59,13 +113,13 @@
     <div class="nav-button-container">
       <div class="nav-button-tabs">
         <input type="radio" id="radio-1" name="tabs" checked="">
-        <label class="nav-button-tab" for="radio-1" onclick="showTab('tab1')">Gallery</label>
+        <label class="nav-button-tab translate" for="radio-1" onclick="showTab('tab1')" data-translation-key="tap1">画廊</label>
         
         <input type="radio" id="radio-2" name="tabs">
-        <label class="nav-button-tab" for="radio-2" onclick="showTab('tab2')">Vision</label>
+        <label class="nav-button-tab translate" for="radio-2" onclick="showTab('tab2')" data-translation-key="tap2">探索</label>
         
         <input type="radio" id="radio-3" name="tabs">
-        <label class="nav-button-tab" for="radio-3" onclick="showTab('tab3')">Season</label>
+        <label class="nav-button-tab translate" for="radio-3" onclick="showTab('tab3')" data-translation-key="tap3">活动</label>
         
         <span class="nav-button-glider"></span>
       </div>
@@ -73,38 +127,38 @@
 
  <div id="tab1" class="tab-content active">
   <div class="entrancebox">
-    <div class="swiper">
+    <div class="swiper" id="swiper-tab1">
          <div class="slide-overlay"></div>
                <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
                   <div class="swiper-text-content">
-                    <h1 class="swiper-text-tittle swiper-tittle-style-1" style="color: rgb(255, 255, 255)">Rough</h1>
-                    <span class="swiper-text-subtittle swiper-style-1"></span>
+                    <h1 class="swiper-text-tittle font-tittle font-style--c1  translate" style="color: rgb(255, 255, 255)" data-translation-key="rough">蓄势待发</h1>
+                    <span></span>
                   </div>
                   <img src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/8ffbfb6b3270835013687952287/SlaJFxlYiE8A.jpg" alt="" />
                 </div>                
 
                     <div class="swiper-slide">
                       <div class="swiper-text-content">
-                        <h1 class="swiper-text-tittle swiper-tittle-style-1"style="color: rgb(255, 255, 255)">WE<br>CONFUSE<br>SIGN<br>WITH<br>THE<br>REAL<br>WORLD</h1>
-                        <span class="swiper-text-subtittle swiper-style-2"></span>
+                        <h1 class="swiper-text-tittle font-tittle font-style--c1 translate" style="color: rgb(255, 255, 255)" data-translation-key="confuse">我们<br>正在混淆<br>符号<br>与<br>真实世界</h1>
+                        <span></span>
                       </div>
                       <img src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/e9ad019c3270835013661962360/Qn7PoUaBDL0A.jpg" alt="" />
                     </div>
             
                     <div class="swiper-slide">
                       <div class="swiper-text-content">
-                        <h1 class="swiper-text-tittle swiper-tittle-style-1" style="color: rgb(255, 255, 255)">Matrix</h1>
-                        <span class="swiper-text-subtittle swiper-style-2"></span>
+                        <h1 class="swiper-text-tittle font-tittle font-style--c1 translate" style="color: rgb(255, 255, 255)" data-translation-key="matrix">矩阵</h1>
+                        <span></span>
                       </div>
                       <img src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/8fffe6703270835013687959717/ZlQz6o61WMQA.jpg" alt="" />
                     </div>
             
                              <div class="swiper-slide">
                       <div class="swiper-text-content">
-                        <h1 class="swiper-text-tittle swiper-tittle-style-2" style="color: rgba(0, 0, 0,0.9)">Structure</h1>
-                        <span class="swiper-text-subtittle swiper-style-2"></span>
+                        <h1 class="swiper-text-tittle font-tittle font-style--c2 translate" style="color: rgba(0, 0, 0,0.9)" data-translation-key="structure">构建</h1>
+                        <span></span>
                       </div>
                       <img src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/c7b08cfc3270835013688014507/PVamabpppQYA.jpg" alt="" />
                     </div>
@@ -145,7 +199,7 @@
     <div class="area-warpper">
       <div class="slide-overlay"></div>
       <div class="swiper-text-content">
-        <h1 class="swiper-text-subtittle-nomal swiper-tittle-style-2" style="color: rgba(0, 0, 0,9)">Hello</h1>
+        <h1 class="swiper-text-tittle-nomal font-tittle font-style--c2 translate" style="color: rgba(0, 0, 0,9)" data-translation-key="hello">你好</h1>
       </div>
       <div class="rainbow-content">
       <div class="loader rainbow">
@@ -263,8 +317,8 @@
       <div class="area-warpper">
         <div class="slide-overlay"></div>
         <div class="swiper-text-content">
-          <h1 class="swiper-text-tittle-normal swiper-tittle-style-1"style="color: rgb(255, 255, 255)">Happy<br>Chinese<br>New<br>Year<br>2024</h1>
-          <span class="swiper-text-subtittle swiper-style-2"></span>
+          <h1 class="swiper-text-tittle-normal font-tittle font-style--c1 translate" style="color: rgb(255, 255, 255)" data-translation-key="newyear2024">龙&nbsp&nbsp&nbsp&nbsp二<br>年&nbsp&nbsp&nbsp&nbsp零<br>大&nbsp&nbsp&nbsp&nbsp二<br>吉&nbsp&nbsp&nbsp&nbsp四</h1>
+          <span></span>
         </div>
         <img src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/44f3836e388912589347967295/Sk6LC8ciUDUA.jpg" alt="" />
       </div>
@@ -324,10 +378,66 @@
 
 
 </div>
-    
-    
+
+<!---->
+
+<script>
+  function showLoading() {
+    var loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+      loadingOverlay.classList.remove('hidden');
+    }
+  }
+
+  function hideLoading() {
+    var loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+      loadingOverlay.classList.add('hidden');
+    }
+  }
+
+  // 页面加载时显示loading overlay
+  showLoading();
+
+  
+      // 首先将动画暂停
+      var loadingCard = document.querySelector('.loading-card');
+      if (loadingCard) {
+        loadingCard.style.animationPlayState = 'paused';
+
+      }
+
+
+  // 添加页面加载完成后的事件监听器
+  window.addEventListener('load', function () {
+    // 设置最小显示时间（以毫秒为单位）
+    var minimumDisplayTime = 1200; // 根据需要调整此值
+
+    // 记录开始时间
+    var startTime = new Date().getTime();
+
+    var loadingCard = document.querySelector('.loading-card');
+    if (loadingCard) {
+      loadingCard.style.animationPlayState = 'running';
+    }
+
+
+
+    // 延迟隐藏loading overlay
+    setTimeout(function () {
+      // 页面和所有资源加载完后隐藏loading overlay
+      hideLoading();
+
+    }, minimumDisplayTime);
+  });
+</script>
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    
-<script src="js/script.js?v=0.37"></script>
+<script src="js/script.js?v=0.38"></script>
 
 
 
