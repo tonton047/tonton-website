@@ -574,6 +574,19 @@ height: 100%;
   user-select: none;
 }
 
+.swiper-container {
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1
+}
+
+.swiper-wrapper{
+  transition-timing-function:cubic-bezier(.5,0,0,1)!important;
+  }
+
 
 .swiper-slide {
   background-position: center;
@@ -638,7 +651,7 @@ height: 100%;
 
   /* -------------------- 轮播图文字 -------------------- */
 
-.swiper-text-content{
+.swiper-text-content {
   width: 100%;
   height: calc(100% - 24px);
   position: absolute;
@@ -646,41 +659,60 @@ height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index:998;
+  z-index: 998;
   user-select: none;
   pointer-events: none;
-  
 }
 
-.swiper-text-tittle{
-    margin: 0;
-    margin-bottom: 2px;
-    opacity: 0;
-    transform: translateY(120px);
-    transition:transform 0.5s ease,opacity 0.5s ease;
+.swiper-text-tittle {
+  margin: 0;
+  margin-bottom: 2px;
+  opacity: 0;
+  transform: translateY(72px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-
-.swiper-text-subtittle{
+.swiper-text-subtittle {
   margin: 0;
   opacity: 0;
   transform: translateY(24px);
-  transition:all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.swiper-slide-active .swiper-text-tittle,
-.swiper-slide-active .swiper-text-subtittle {
+
+
+/* 只对父轮播图的活动状态进行样式设置 */
+.parent-slide.swiper-slide-active .swiper-text-tittle,
+.parent-slide.swiper-slide-active .swiper-text-subtittle {
   opacity: 1;
   transform: translateY(0);
 }
 
-.swiper-slide-active .swiper-text-tittle {
-  transition-delay: 0.1s; /* Add a delay to the price transition */
+.parent-slide.swiper-slide-active .swiper-text-tittle {
+  transition-delay: 0.1s;
 }
 
-.swiper-slide-active .swiper-text-subtittle {
-  transition-delay: 0.3s; /* Add a delay to the price transition */
+.parent-slide.swiper-slide-active .swiper-text-subtittle {
+  transition-delay: 0.3s;
 }
+
+
+/* 只对父轮播图的活动状态进行样式设置 */
+.child-slide.swiper-slide-active .swiper-text-tittle,
+.child-slide.swiper-slide-active .swiper-text-subtittle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.child-slide.swiper-slide-active .swiper-text-tittle {
+  transition-delay: 0.1s;
+}
+
+.child-slide.swiper-slide-active .swiper-text-subtittle {
+  transition-delay: 0.3s;
+}
+
+
 
 
 
@@ -799,6 +831,15 @@ height: 100%;
   opacity: 0;
   transition: opacity 0.2s ease; /* 添加过渡效果 */
 }
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled{
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+}
+
+
 
 @media screen and (max-width: 720px) {
 

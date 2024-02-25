@@ -54,21 +54,27 @@ function openEmailWindow() {
 }
 
 /* swiper */
-document.addEventListener("DOMContentLoaded", function() {
-  var swiper = new Swiper(".swiper", {
+document.addEventListener("DOMContentLoaded", function () {
+  var navButtons = document.querySelectorAll('.nav-button-tab');
+  var swiperH = new Swiper('.swiper-container-h', {
+    speed: 500,
+    spaceBetween: 0,
+    simulateTouch: false,
+    // Exclude .swiper-text-content from noSwiping
+    noSwiping: '.swiper-text-content:not(.swiper-slide)',
+    noSwipingClass: 'stop-swiping',
+  });
 
+  var swiperV = new Swiper(".swiper", {
     autoplay: {
       delay: 2500,
     },
-
-    lazyLoading : true,
-    lazyLoadingInPrevNext : true,
-
-    speed:400,
+    lazyLoading: true,
+    lazyLoadingInPrevNext: true,
+    speed: 500,
     slidesPerView: 1,
-     spaceBetween: 16,
-
-     loopAddBlankSlides: false,
+    spaceBetween: 16,
+    loopAddBlankSlides: false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -78,7 +84,24 @@ document.addEventListener("DOMContentLoaded", function() {
       clickable: true,
     },
   });
+
+  navButtons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      // 切换到对应的 swiperH slide
+      swiperH.slideTo(index);
+
+      // 暂停 swiperV 的自动播放
+      swiperV.autoplay.stop();
+    });
+  });
+
+  // swiperH 切换完成后重新启动 swiperV 的自动播放
+  swiperH.on('transitionEnd', function () {
+    swiperV.autoplay.start();
+  });
 });
+
+
 
 
 /* 侧边栏 */
@@ -123,7 +146,7 @@ function toggleSidebar() {
   if (swiperPagination) {
     swiperPagination.style.visibility = isSidebarOpen ? 'hidden' : 'visible';
   }
-  
+
 }
 
 
@@ -220,10 +243,11 @@ changeLanguage();
 
 /* —————————— navigation bar —————————— */
 
+/*
 function showTab(tabId) {
   // 隐藏所有选项卡
   var tabs = document.querySelectorAll('.tab-content');
-  tabs.forEach(function(tab) {
+  tabs.forEach(function (tab) {
     tab.classList.remove('active');
   });
 
@@ -233,14 +257,15 @@ function showTab(tabId) {
     selectedTab.classList.add('active');
   }
 }
+*/
 
 
 /* -------------------- loading -------------------- */
 // Simulate a delay (replace this with your actual loading logic)
 setTimeout(function () {
-    // Remove the loading overlay after the delay
-    var loadingOverlay = document.getElementById('loadingOverlay');
-    if (loadingOverlay) {
-        loadingOverlay.style.display = 'none';
-    }
+  // Remove the loading overlay after the delay
+  var loadingOverlay = document.getElementById('loadingOverlay');
+  if (loadingOverlay) {
+    loadingOverlay.style.display = 'none';
+  }
 }, 2000); // Adjust the delay as needed or replace it with your actual loading logic
