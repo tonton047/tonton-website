@@ -2144,6 +2144,7 @@ line-height: 1.5;
 .article-p-note{
   background:rgba(0, 0, 0, 0.035);
   padding: 20px 20px 2px 20px;
+  margin-top: 18px;
   border-radius: 12px;
   margin-bottom: 18px;
 }
