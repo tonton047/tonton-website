@@ -76,11 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   var swiperV = new Swiper(".swiper", {
-    /*
+
     autoplay: {
-      delay: 3500,
+      delay:3500,
     },
-    */
     lazyLoading: true,
     lazyLoadingInPrevNext: true,
     speed: 500,
