@@ -1,0 +1,301 @@
+
+          <div class="article-banner">
+            <div class="painting_001bottle">
+              <div class="painting_bottle">
+               <div class="painting_bottle_layer1"></div>
+               <div class="painting_bottle_layer2"></div>
+               <div class="painting_bottle_layer3"></div>
+               <div class="painting_bottle_chest"></div>
+              </div>
+            </div> 
+          </div>
+          <div class="article-reading-area" style="background: linear-gradient(180deg, 
+          rgba(216, 227, 230, 0) 0vh, 
+          rgba(216, 227, 230,0) 45vh,
+          rgba(216, 227, 230,1) 65vh,
+          rgba(216, 227, 230,1) 100vh);">
+            <div class="article-text-box article-cn" data-language="CN">
+              <div class="article-h1 article-h1--b font-style--e1 translate" data-translation-key="article1">Bottle<Br>Creation</div>
+              <div class="article-info-box">
+                <div class="article-info-box--infoimg">
+                  <img
+                    src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/747f8dd31397757886165000939/7SQWqejqEkEA.jpg"
+                    alt="info-picture" />
+                </div>
+                <div class="article-info-box--infoname"  style="color:rgb(1, 11, 31)">刘通</div>
+                <div class="article-info-box--infoslide"  style="background-color:rgb(1, 11, 31)"></div>
+                <div class="article-info-box--infoname"  style="color:rgb(1, 11, 31)">3月10日</div>
+              </div>
+                <div class="article-p article-p--b font-style--c1">
+                <div class="article-p-note">
+                <p>
+                  我花了一些时间学习如何使用纯CSS代码来绘制图形。事实上，这已经不是什么新鲜事物了。
+                  你可以在CodePen或其他代码分享平台上搜索“draw”和“CSS”关键词，浏览更多大师们创作的精美图案，甚至是动态图形
+                </p>     
+                </div>         
+              <p>
+                这个瓶子看起来似乎非常简单，如果在专业的绘图软件上，可能只需要不到半小时就能完成。然而，通过CSS的方式，除了学习的时间，我花了大约两天的时间。
+                在绘图软件上，你的图形元素排列是可视化的，但在代码的世界中，它是这样呈现的
+              </p>
+              <img
+              src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/5c6b13ef1397757886633032372/PaZqENEAnqQA.png"
+              alt="" />
+              <h1>
+                为什么这么做？
+              </h1>
+              <p>  
+                我找到了一个有趣的出发点，答案是：这个瓶子是响应式的
+              </p>
+              <img
+              src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/4f55b16d1397757886602232507/skAORd2qP58A.png"
+              alt="" />
+              <p>
+                如果你现在正在手机上浏览这篇文章，可以尝试90°翻转手机，来看看瓶子是否发生变化
+                （如果你是在电脑上浏览这篇文章，可以通过自由拉伸浏览器窗口大小的方式来观察变化）
+              </p>
+              <div class="painting_container">
+                  <div class="painting_bottle">
+                   <div class="painting_bottle_layer1"></div>
+                   <div class="painting_bottle_layer2"></div>
+                   <div class="painting_bottle_layer3"></div>
+                   <div class="painting_bottle_chest"></div>
+                  </div>
+              </div>
+              <p>
+                没错！这个瓶子能根据你当前屏幕的视窗比例，变得"更强壮"或变得"更纤细"
+              </p>
+              <p>
+                "响应式"是指网页或应用程序可以根据用户的设备和屏幕尺寸动态调整布局和显示效果，
+                以提供最佳的用户体验，这种设计方法旨在确保用户无论使用什么设备，都能够获得良好的可视化和操作体验。
+              </p>  
+              <img
+              src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/4f55ba711397757886602232745/s7zpIa2cqZ0A.png"
+              alt="" />
+              <p>
+                自适应的界面设计已经渗透到我们生活的方方面面。它不仅仅是文字、按钮等元素放大缩小的调整，
+                更是基于媒体大小进行更合理的重新布局。当然，这不是一篇教学文章，因为我已经快要编不出其它内容了。
+              </p>
+              <h1>
+                绘制这个瓶子运用到的几个知识点：
+              </h1>
+              <h2>
+                vw(宽)/vh(高)
+              </h2>
+              <p>
+                "vw"和"vh"是非常巧妙的计量单位。另外还有其他一些智能单位，比如(dp、rem等)。使用方式如height:20vh，这表示元素的高度等于视窗高度的20%。
+                我可以通过一张图演示20px*20px和weight:20vw;height:20vh之间的区别
+              </p>
+              <img
+              src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/5c46ef6d1397757886633012651/AJXEORgyATcA.png"
+              alt="" />
+              <p><br></p>
+              <h2>
+                填充方式：linear-gradient、radial-gradient
+              </h2>
+              <h3>
+                linear-gradient
+              </h3>
+              <p>
+                例:在一个大小为50vw*50vh的元素内，使用了线性渐变：linear-gradient(90deg, #BADBE7 0, #7BBADE 100%) 50% 0% / 50% 15%,可视化效果呈现为:
+              </p>
+              <img
+              src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/4f55b1ab1397757886602232523/A6x8Ur9VosIA.png"
+              alt="" />
+              <p>
+                这个解读的文字含义是：使用90度方向的线性渐变，从颜色A（#BADBE7）开始，到颜色B（#7BBADE）
+                结束。居中显示，并且相对于画布宽度的50%，高度的15%进行定位
+              </p>
+              <p><br></p>
+              <h3>
+                radial-gradient
+              </h3>
+              <p>
+                例如:在一个大小为50vw*50vh的元素内，使用了径向渐变：`radial-gradient(100% 100% at 100% 0%, #FFFFFF 0, #7BBADE 100%)`。可视化效果呈现为：
+              </p>
+              <img
+              src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/5c46f32d1397757886633012714/ixRkIJczng0A.png"
+              alt="" />
+              <p>
+                这个解读的文字含义是：径向渐变，中心点位于画布的水平100%，垂直0%的位置。
+                渐变的颜色从白色（#FFFFFF）开始，到颜色B（#7BBADE）结束。颜色B占据整个渐变的100%位置
+              </p>
+              <p><br></p>
+              <h2>
+                计算方式
+              </h2>
+              <h3>
+                calc( A +/- B )
+              </h3>
+              <p>
+                calc( A +/- B )，我在这次绘制瓶子的实际操作中，在计算公式里使用了非常复杂的混合方式....(没想到它居然还奏效了),
+                例如height:calc(70vh - 11vh - 12% + 2px)，它的文字解读是高度=70%屏占比 - 11%屏占比 - 12%父级元素高度 + 2像素
+              </p>
+              <div class="article-p-attention">
+              注意 +/- 两侧添加空格
+              </div>
+              <div class="article-p-attention">
+              为什么不把'70vh - 11vh'直接写成59vh，这些数值一一对应需要计算的元素大小，方便进行对照修改
+              </div>
+              <p><br></p>
+              <div class="article-p-note">
+              <p>
+                在前期的准备工作中，我任然需要通过绘图软件先进行构图，然后用css进行还原，这是一个不错的训练方式
+              </p>
+              <p>
+                你可以访问<a href="https://codepen.io/pinkcowboy047/pen/wvZKGVp">codepen</a>来查阅该瓶子的源代码，在后续系列的创作中，
+                我依旧会通过预先使用codepen进行css编写的方式，最后再微调相关代码部署进我的站点中
+              </p>
+              </div>
+
+                </div>
+          </div>
+
+          <div class="article-text-box article-en" data-language="EN">
+            <div class="article-h1 article-h1--b font-style--e1 translate" data-translation-key="article1">Bottle<Br>Creation</div>
+            <div class="article-info-box">
+              <div class="article-info-box--infoimg">
+                <img
+                  src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/747f8dd31397757886165000939/7SQWqejqEkEA.jpg"
+                  alt="info-picture" />
+              </div>
+              <div class="article-info-box--infoname"  style="color:rgb(1, 11, 31)">Liu Tong</div>
+              <div class="article-info-box--infoslide"  style="background-color:rgb(1, 11, 31)"></div>
+              <div class="article-info-box--infoname"  style="color:rgb(1, 11, 31)">March 10th</div>
+            </div>
+
+            <div class="article-p article-p--b font-style--c1">
+              <div class="article-p-note">
+              <p>
+                The appearance of this bottle seems quite simple. 
+                If done using professional graphic design software, 
+                it might take less than half an hour to complete. However, 
+                through the CSS approach, it took me about two days, 
+                including the learning time. In graphic design software, 
+                the arrangement of your graphic elements is visual, 
+                but in the world of code, it is presented like this:
+              </p>     
+              </div>         
+            <p>
+              The appearance of this bottle might seem quite simple. 
+              If done using professional graphic design software, 
+              it might take less than half an hour to complete. However, 
+              through the CSS approach, aside from the learning time, 
+              it took me about two days. In graphic design software, 
+              the arrangement of your graphic elements is visual, 
+              but in the world of code, it is presented like this:
+            </p>
+            <img
+            src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/5c6b13ef1397757886633032372/PaZqENEAnqQA.png"
+            alt="" />
+            <h1>
+              Why did I do this?
+            </h1>
+            <p>  
+              I found an interesting starting point, and the answer is: this bottle is responsive.
+            </p>
+            <img
+            src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/4f55b16d1397757886602232507/skAORd2qP58A.png"
+            alt="" />
+            <p>
+              If you're currently viewing this article on your phone, try rotating it 90° to see if the bottle changes
+              (If you're on a computer, you can observe the changes by freely resizing the browser window).
+            </p>
+            <div class="painting_container">
+                <div class="painting_bottle">
+                 <div class="painting_bottle_layer1"></div>
+                 <div class="painting_bottle_layer2"></div>
+                 <div class="painting_bottle_layer3"></div>
+                 <div class="painting_bottle_chest"></div>
+                </div>
+            </div>
+            <p>
+              That's right! This bottle can become "more robust" or "slimmer" based on the aspect ratio of your current screen viewport.
+            </p>
+            <p>
+              "Responsive" refers to the ability of a website or application to dynamically adjust its layout and display effects based on the user's device and screen size, aiming to provide the best user experience. This design approach ensures that users, 
+              regardless of the device they use, receive a visually appealing and user-friendly experience.
+            </p>  
+            <img
+            src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/4f55ba711397757886602232745/s7zpIa2cqZ0A.png"
+            alt="" />
+            <p>
+              Adaptive interface design has permeated various aspects of our lives. It involves more than
+               just resizing elements like text and buttons; 
+               it entails a thoughtful rearrangement of layouts based on media size. 
+               Of course, this isn't a tutorial article, as I'm running out of other content to write...
+            </p>
+            <h1>
+              The knowledge points applied in drawing this bottle:
+            </h1>
+            <h2>
+              vw(width)/vh(height)
+            </h2>
+            <p>
+              "vw" and "vh" are very clever measurement units. 
+              There are also other intelligent units, 
+              such as (dp, rem, etc.). Usage looks like height: 20vh, 
+              indicating that the element's height is equal to 20% of the viewport height.
+               I can illustrate the difference between 20px*20px and weight: 20vw; 
+               height: 20vh with an image.
+            </p>
+            <img
+            src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/5c46ef6d1397757886633012651/AJXEORgyATcA.png"
+            alt="" />
+            <p><br></p>
+            <h2>
+             Filling methods: linear-gradient, radial-gradient.
+            </h2>
+            <h3>
+              linear-gradient
+            </h3>
+            <p>
+              Example: In an element with a size of 50vw*50vh, a linear gradient is applied: linear-gradient(90deg, #BADBE7 0, #7BBADE 100%) 50% 0% / 50% 15%, and the visual effect is displayed as:
+            </p>
+            <img
+            src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/4f55b1ab1397757886602232523/A6x8Ur9VosIA.png"
+            alt="" />
+            <p>
+              The interpretation of this text is: Apply a linear gradient in the direction of 90 degrees, starting from color A (#BADBE7) to color B (#7BBADE). It is centered and positioned relative to 50% of the canvas width and 15% of the height.
+            </p>
+            <p><br></p>
+            <h3>
+              radial-gradient
+            </h3>
+            <p>
+              The interpretation of this text is: Apply a radial gradient within an element sized at 50vw*50vh, using `radial-gradient(100% 100% at 100% 0%, #FFFFFF 0, #7BBADE 100%)`. The visualization appears as follows:
+            </p>
+            <img
+            src="https://1324331137.vod-qcloud.com/97417ffevodcq1324331137/5c46f32d1397757886633012714/ixRkIJczng0A.png"
+            alt="" />
+            <p>
+              The interpretation of this text is: Radial gradient with the center point at the position of 100% horizontally and 0% vertically on the canvas. The gradient transitions from white (#FFFFFF) at the starting point to color B (#7BBADE) at the ending point, with color B occupying the entire 100% position of the gradient.
+            </p>
+            <p><br></p>
+            <h2>
+            Calculation method
+            </h2>
+            <h3>
+              calc( A +/- B )
+            </h3>
+            <p>
+              "calc( A +/- B )" is a calculation method I used in the actual process of drawing the bottle. I employed a complex combination in the formula, and surprisingly, it worked. For example, "height: calc(70vh - 11vh - 12% + 2px)" can be interpreted as the height being equal to 70% of the screen height minus 11% of the screen height minus 12% of the parent element's height plus 2 pixels.
+            </p>
+            <div class="article-p-attention">
+              Add spaces on both sides of +/- for attention.
+            </div>
+            <div class="article-p-attention">
+              Why not directly write '70vh - 11vh' as 59vh? These values correspond to the sizes of the elements that need to be calculated, making it easier for reference and modification.
+            </div>
+            <p><br></p>
+            <div class="article-p-note">
+            <p>
+              In the early stage of preparation, I still need to use drawing software for composition and then replicate it using CSS. This is a good training method.
+            </p>
+            <p>
+              "You can visit <a href="https://codepen.io/pinkcowboy047/pen/wvZKGVp">CodePen</a> to review the source code of this bottle. In the subsequent series of creations, I will still use CodePen for pre-writing CSS and then fine-tune the relevant code before deploying it on my website."
+            </p>
+            </div>
+
+              </div>
+
+        </div>

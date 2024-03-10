@@ -1,0 +1,440 @@
+body {
+  
+/* gary */
+--white-texture:rgba(188, 210, 218,0.12);
+--light-gary: rgb(238, 245, 247);
+--gary: rgb(213, 230, 234);
+--deep-gary: rgb(188, 210, 218);
+
+/* blue */
+--blue: rgb(59, 152, 201);
+--light-blue: rgb(238, 245, 247);
+--deep-blue: rgb(40, 117, 165);
+
+/* basic color */
+--black: rgb(0, 0, 0);
+--white: rgb(255, 255, 255);
+--red: rgb(255, 0, 0);
+--light-water: rgba(255, 255, 255,0.5); 
+  
+}
+
+.painting_container{
+scale:0.8;
+height: 72vh;
+margin: 0 auto;
+
+}
+
+.painting_bottle, .painting_bottle::before, .painting_bottle::after, .painting_bottle *, .painting_bottle *::after, .painting_bottle *::before {
+	position: absolute;
+	content: '';
+}
+
+.painting_001bottle{
+ height:100%;
+ width:100%;
+ background-color:#D8E3E6;
+}
+
+.painting_bottle{
+  	top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width:40vw; min-width:240px;
+    height:80vh;  min-height:72px;
+    background:
+/* bottle-cover */
+               
+/* cover-texture */
+linear-gradient( to right,
+    transparent 2%,
+    var(--white-texture) 2% 4%,
+    transparent 4% 6%,
+    var(--white-texture) 6% 8%,
+    transparent 8% 10%,
+    var(--white-texture) 10% 12%,
+    transparent 12% 14%,
+    var(--white-texture) 14% 16%,
+    transparent 16% 18%,
+    var(--white-texture) 18% 20%,
+    transparent 20% 22%,
+    var(--white-texture) 22% 24%,
+    transparent 24% 26%,
+    var(--white-texture) 26% 28%,
+    transparent 28% 30%,
+    var(--white-texture) 30% 32%,
+    transparent 32% 34%,
+    var(--white-texture) 34% 36%, 
+    transparent 36% 38%,
+    var(--white-texture) 38% 40%,
+    transparent 40% 42%,
+    var(--white-texture) 42% 44%,
+    transparent 44% 46%,
+    var(--white-texture) 46% 48%,
+    transparent 48% 50%,
+    var(--white-texture) 50% 52%,
+    transparent 52% 54%,
+    var(--white-texture) 54% 56%,
+    transparent 56% 58%,
+    var(--white-texture) 58% 60%,
+    transparent 60% 62%,
+    var(--white-texture) 62% 64%,
+    transparent 64% 66%,
+    var(--white-texture) 66% 68%, 
+    transparent 68% 70%,
+    var(--white-texture) 70% 72%,
+    transparent 72% 74%,
+    var(--white-texture) 74% 76%, 
+    transparent 76% 78%,
+    var(--white-texture) 78% 80%,
+    transparent 80% 82%,
+    var(--white-texture) 82% 84%,
+    transparent 84% 86%,
+    var(--white-texture) 86% 88%,
+    transparent 88% 90%,
+    var(--white-texture) 90% 92%,
+    transparent 92% 94%,
+    var(--white-texture) 94% 96%,
+    transparent 96% 98%,
+    var(--white-texture) 98% 100%,
+    transparent 100%
+)50% 0% / 10vh 6vh no-repeat,  
+    
+/* cover-body */           
+linear-gradient(90deg, #E6F0F2 50%,#F2F6F7 50%)50% 0% / 5vh 6vh no-repeat, 
+linear-gradient(90deg, #DBE9F2 50%,var(--white) 50%)50% 0% / 10vh 6vh no-repeat, 
+      
+/* cover-ring */
+linear-gradient(90deg, rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.75) 50%)50% 6.5vh / 10vh 0.75vh no-repeat,       
+      
+/* bottle-neck */      
+linear-gradient(90deg, #BCDCEB 50%,#D5E6EA 50%)50% 0% / 5vh 10vh no-repeat, 
+      
+linear-gradient(90deg, #B3D6EF 50%,#DAEFF4 50%)50% 0% / 10vh 10vh no-repeat;
+}     
+
+
+.painting_bottle::before{
+  bottom:0;
+	width:100%;
+  height:calc(80vh - 10vh + 1px);
+  min-width:72px;
+  border-radius: 4vh 4vh 4vh 4vh;
+	background:
+  /* 1 */  
+  linear-gradient(90deg,#BCDEF6 50%,#D5E9EF 50%) 50% 0% / 100% 15%, 
+    
+  /* 2 */  
+ /* water */     
+linear-gradient(90deg,#C7DBE8 25%,transparent 25%,transparent 75%,#C1F8FF 75%) 50% 100% / 50% 18vh,   
+linear-gradient(90deg,#D5E6EA 0%,#A3CBDA 50%,#D5E6EA 50%) 50% 100% / 100% 18vh,
+linear-gradient(90deg,#D2E4F0 50%,#D5E6EA 100%) 50% 100% / 100% 31vh,
+linear-gradient(90deg,#D7E6ED 50%,#F0FCFF 50%) 50% 100% / 100% 41vh,      
+
+   
+    
+  /* body */  
+  radial-gradient(at 100% 100%, #DDEEF2 0,#A3CBDA 50%,transparent 100%)50% 100% / 100% 100%; 
+  background-repeat: no-repeat;
+}
+
+.painting_bottle_layer1{
+  left:50%;
+  transform:translateX(-50%);
+  bottom:1vh;
+	width:calc(100% - 2vh);
+  height:calc(80vh - 11vh + 1px);
+  min-width:72px;
+  border-radius: 3vh 3vh 3vh 3vh;
+	background:
+  /* 1 */  
+  linear-gradient(90deg,#BCDEF6 50%,#D5E9EF 50%) 50% 0% / 100% 15%,
+    
+  /* 2 */
+  /* water */     
+  linear-gradient(90deg,rgba(255,255,255,0.5) 50%,#ECF8FC 50%) 50% 100% / 100% 30vh, 
+  /* air */   
+  linear-gradient(90deg,#BADBE7 50%,#E4F2F7 50%) 50% 100% / 100% 41vh;
+  background-repeat: no-repeat;   
+  
+}
+
+.painting_bottle_layer2{
+  left:50%;
+  transform:translateX(-50%);
+  bottom:1vh;
+	width:75%;
+  height:calc(80vh - 11vh + 1px);
+  min-width:72px;
+  border-radius: 4vh 4vh 4vh 4vh;
+	background:
+  /* 1 */  
+  linear-gradient(90deg,#A7D4E7 50%,#E8F9FC 50%) 50% 0% / 100% 15%,
+    
+  /* 2 */
+  /* water */     
+  linear-gradient(90deg,#C1E0EB 50%,#F8FAFB 50%) 50% 100% / 100% 30vh, 
+  /* air */   
+  linear-gradient(90deg,#A7D4E7 50%,#F8FBFC 50%) 50% 100% / 100% 41vh;
+  background-repeat: no-repeat;  
+}
+
+.painting_bottle_layer3{
+  left:50%;
+  transform:translateX(-50%);
+  bottom:1vh;
+	width:50%;
+  height:calc(80vh - 11vh + 1px);
+  min-width:72px;
+  border-radius: 4vh 4vh 0vh 0vh;
+	background:
+  /* A-1 */  
+  linear-gradient(90deg,#BCDEF6 50%,#D5E6EA 50%) 50% 0% / 50% 15%,
+  /* A-2 */    
+  /* water */  
+  linear-gradient(90deg,#D4E8EF 50%,#DFF1F3 50%) 50% 100% / 50% 15vh,   
+  linear-gradient(90deg,#D4E8EF 50%,#E7F4F7 50%) 50% 100% / 50% 30vh, 
+  /* air */
+  linear-gradient(90deg,#A7CEDC 50%,#BADBE7 50%) 50% 100% / 50% 41vh,  
+  /* B-1 */   
+  linear-gradient(90deg,#BCDCEB 50%,#DAEFF4 50%) 50% 0% / 100% 15%,
+    
+  /* B-2 */    
+  /* water */     
+  linear-gradient(90deg,#D5E3F0 50%,#EAFAFC 50%) 50% 100% / 100% 15vh,   
+  linear-gradient(90deg,#D1E7F0 50%,#EAFAFC 50%) 50% 100% / 100% 30vh,   
+  /* air */   
+  linear-gradient(90deg,#BCDCEB 50%,#D8EBEF 50%) 50% 100% / 100% 41vh;
+  background-repeat: no-repeat; 
+}
+
+.painting_bottle_chest::before{
+    position:absolute;
+    left:50%;
+    top:8vh;
+    transform:translateX(-50%);
+    height: 15vh;
+    width: 50%;
+    border-radius: 0% 0% 0% 80%;
+    border-right: 0;
+    background-color: transparent;
+    box-shadow: 0vh 4vh 0px 0px #FFFFFF;
+}
+
+.painting_bottle_chest{
+  position:absolute;
+  bottom:1vh;
+  z-index:1;
+  width:100%;
+  height:calc(80vh - 10vh);
+  background:   
+/* 1 */   
+linear-gradient(90deg, #3899D9 50% ,#42A5D9 50%) 50% calc(6vh + 1vh) / 25% 25vh,        
+/* 2 */   
+linear-gradient(90deg, #3994D9 50% ,#57C0ED 50%) 50% calc(6vh + 1vh) / 50% 12.5vh,      
+linear-gradient(90deg, #3899D9 50% ,#59BAFF 50%) 50% calc(6vh + 1vh) / 50% 25vh,    
+ /* 3 */   
+linear-gradient(90deg, #3389C0 50% ,#5FE2FE 50%) 50% calc(6vh + 1vh) / 75% 12.5vh,       
+linear-gradient(90deg, #3381C0 50% ,#59CDFF 50%) 50% calc(6vh + 1vh) / 75% 25vh,    
+
+/*basic color*/    
+linear-gradient(180deg, var(--blue) 0% ,var(--blue) 100%,transparent 0% )100% calc(6vh + 1vh) / 100% 25vh;
+  
+background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width: 720px) {
+  .painting_bottle {
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    width: 40vw;
+    min-width: 180px;
+    height: 68dvh;
+    background:
+      /* bottle-cover */
+      /* cover-texture */
+      linear-gradient( to right,
+        transparent 2%,
+        var(--white-texture) 2% 4%,
+        transparent 4% 6%,
+        var(--white-texture) 6% 8%,
+        transparent 8% 10%,
+        var(--white-texture) 10% 12%,
+        transparent 12% 14%,
+        var(--white-texture) 14% 16%,
+        transparent 16% 18%,
+        var(--white-texture) 18% 20%,
+        transparent 20% 22%,
+        var(--white-texture) 22% 24%,
+        transparent 24% 26%,
+        var(--white-texture) 26% 28%,
+        transparent 28% 30%,
+        var(--white-texture) 30% 32%,
+        transparent 32% 34%,
+        var(--white-texture) 34% 36%, 
+        transparent 36% 38%,
+        var(--white-texture) 38% 40%,
+        transparent 40% 42%,
+        var(--white-texture) 42% 44%,
+        transparent 44% 46%,
+        var(--white-texture) 46% 48%,
+        transparent 48% 50%,
+        var(--white-texture) 50% 52%,
+        transparent 52% 54%,
+        var(--white-texture) 54% 56%,
+        transparent 56% 58%,
+        var(--white-texture) 58% 60%,
+        transparent 60% 62%,
+        var(--white-texture) 62% 64%,
+        transparent 64% 66%,
+        var(--white-texture) 66% 68%, 
+        transparent 68% 70%,
+        var(--white-texture) 70% 72%,
+        transparent 72% 74%,
+        var(--white-texture) 74% 76%, 
+        transparent 76% 78%,
+        var(--white-texture) 78% 80%,
+        transparent 80% 82%,
+        var(--white-texture) 82% 84%,
+        transparent 84% 86%,
+        var(--white-texture) 86% 88%,
+        transparent 88% 90%,
+        var(--white-texture) 90% 92%,
+        transparent 92% 94%,
+        var(--white-texture) 94% 96%,
+        transparent 96% 98%,
+        var(--white-texture) 98% 100%,
+        transparent 100%
+      )50% 0% / 10dvh 6dvh no-repeat,  
+      /* cover-body */
+      linear-gradient(90deg, #E6F0F2 50%, #F2F6F7 50%)50% 0% / 5dvh 6dvh no-repeat, 
+      linear-gradient(90deg, #DBE9F2 50%, var(--white) 50%)50% 0% / 10dvh 6dvh no-repeat, 
+      /* cover-ring */
+      linear-gradient(90deg, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0.75) 50%)50% 6.5dvh / 10dvh 0.75dvh no-repeat,       
+      /* bottle-neck */
+      linear-gradient(90deg, #BCDCEB 50%, #D5E6EA 50%)50% 0% / 5dvh 10dvh no-repeat, 
+      linear-gradient(90deg, #B3D6EF 50%, #DAEFF4 50%)50% 0% / 10dvh 10dvh no-repeat;
+  }     
+
+
+  .painting_bottle::before {
+    bottom: 0;
+    width: 100%;
+    height: calc(68dvh - 10dvh + 1px);
+    min-width: 72px;
+    border-radius: 4dvh 4dvh 4dvh 4dvh;
+    background:
+      /* 1 */  
+      linear-gradient(90deg,#BCDEF6 50%,#D5E9EF 50%) 50% 0% / 100% 15%, 
+      /* 2 */
+      /* water */     
+      linear-gradient(90deg,#C7DBE8 25%,transparent 25%,transparent 75%,#C1F8FF 100%) 50% 100% / 50% 24dvh,   
+      linear-gradient(90deg,#D5E6EA 0%,#A3CBDA 50%,#D5E6EA 50%) 50% 100% / 100% 24dvh,   
+      linear-gradient(90deg,#D2E4F0 50%,#D5E6EA 100%) 50% 100% / 100% 23dvh,
+      linear-gradient(90deg,#D7E6ED 50%,#F0FCFF 50%) 50% 100% / 100% 41dvh,  
+      /* body */  
+      radial-gradient(at 100% 100%, #DDEEF2 0,#A3CBDA 50%,transparent 100%)50% 100% / 100% 100%; 
+    background-repeat: no-repeat;
+  }
+
+  .painting_bottle_layer1 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1dvh;
+    width: calc(100% - 2dvh);
+    height: calc(68dvh - 11dvh + 1px);
+    min-width: 72px;
+    border-radius: 3dvh 3dvh 3dvh 3dvh;
+    background:
+      /* 1 */  
+      linear-gradient(90deg,#BCDEF6 50%,#D5E9EF 50%) 50% 0% / 100% 15%, 
+      /* 2 */
+      /* water */     
+      linear-gradient(90deg,rgba(255,255,255,0.5) 50%,#ECF8FC 50%) 50% 100% / 100% 23dvh, 
+      /* air */   
+      linear-gradient(90deg,#BADBE7 50%,#E4F2F7 50%) 50% 100% / 100% 41dvh;
+    background-repeat: no-repeat;   
+  }
+
+  .painting_bottle_layer2 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1dvh;
+    width: 75%;
+    height: calc(68dvh - 11dvh + 1px);
+    min-width: 72px;
+    border-radius: 4dvh 4dvh 4dvh 4dvh;
+    background:
+      /* 1 */  
+      linear-gradient(90deg,#A7D4E7 50%,#E8F9FC 50%) 50% 0% / 100% 15%, 
+      /* 2 */
+      /* water */     
+      linear-gradient(90deg,#C1E0EB 50%,#F8FAFB 50%) 50% 100% / 100% 23dvh, 
+      /* air */   
+      linear-gradient(90deg,#A7D4E7 50%,#F8FBFC 50%) 50% 100% / 100% 41dvh;
+    background-repeat: no-repeat;  
+  }
+
+  .painting_bottle_layer3 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1dvh;
+    width: 50%;
+    height: calc(68dvh - 11dvh + 1px);
+    min-width: 72px;
+    border-radius: 4dvh 4dvh 0dvh 0dvh;
+    background:
+      /* A-1 */  
+     
+      /* A-2 */    
+      /* water */  
+      linear-gradient(90deg,#D4E8EF 50%,#DFF1F3 50%) 50% 100% / 50% 23dvh,   
+      linear-gradient(90deg,#D4E8EF 50%,#E7F4F7 50%) 50% 100% / 50% 23dvh, 
+      /* air */
+      linear-gradient(90deg,#A7CEDC 50%,#BADBE7 50%) 50% 100% / 50% 41dvh,  
+      /* B-1 */   
+      linear-gradient(90deg,#BCDCEB 50%,#DAEFF4 50%) 50% 0% / 100% 15%, 
+      /* B-2 */    
+      /* water */     
+      linear-gradient(90deg,#D5E3F0 50%,#EAFAFC 50%) 50% 100% / 100% 23dvh,   
+      linear-gradient(90deg,#D1E7F0 50%,#EAFAFC 50%) 50% 100% / 100% 23dvh,   
+      /* air */   
+      linear-gradient(90deg,#BCDCEB 50%,#D8EBEF 50%) 50% 100% / 100% 41dvh;
+    background-repeat: no-repeat; 
+  }
+
+  .painting_bottle_chest::before {
+    position: absolute;
+    left: 50%;
+    top: 8dvh;
+    transform: translateX(-50%);
+    height: 10dvh;
+    width: 75%;
+    border-radius: 10% 0% 0% 60%;
+    border-right: 0;
+    background-color: transparent;
+    box-shadow: 0dvh 4dvh 0px 0px #FFFFFF;
+  }
+
+  .painting_bottle_chest {
+    position: absolute;
+    bottom: 1dvh;
+    z-index: 1;
+    width: 100%;
+    height: calc(68dvh - 10dvh);
+    background:   
+      /* 1 */   
+      linear-gradient(90deg, #3899D9 50% ,#42A5D9 50%) 50% calc(6dvh + 1dvh) / 25% 20dvh,        
+      /* 2 */   
+      linear-gradient(90deg, #3994D9 50% ,#57C0ED 50%) 50% calc(6dvh + 1dvh) / 50% 10dvh,      
+      linear-gradient(90deg, #3899D9 50% ,#59BAFF 50%) 50% calc(6dvh + 1dvh) / 50% 20dvh,    
+      /* 3 */   
+      linear-gradient(90deg, #3389C0 50% ,#5FE2FE 50%) 50% calc(6dvh + 1dvh) / 75% 10dvh,       
+      linear-gradient(90deg, #3381C0 50% ,#59CDFF 50%) 50% calc(6dvh + 1dvh) / 75% 20dvh,    
+      /* basic color */    
+      linear-gradient(180deg, var(--blue) 0% ,var(--blue) 100%,transparent 0% )100% calc(6dvh + 1dvh) / 100% 20dvh;
+    background-repeat: no-repeat;
+  }
+}
