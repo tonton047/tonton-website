@@ -185,12 +185,10 @@ function toggleIcon() {
   icon.classList.toggle('open');
 }
 
-/* 复制按钮 */
 
 /* —————————— 切换语言 —————————— */
 function changeLanguage() {
   console.log('Change language clicked!'); // 添加这一行
-  
 
   // 获取所有需要切换语言的元素
   var elementsToTranslate = document.querySelectorAll('.translate');
@@ -295,7 +293,6 @@ if (targetLanguage === 'CN') {
 
   // 其他初始化代码可以放在这里
 });
-
 
 
 
